@@ -14,7 +14,7 @@
         </header>
 
         <div class="menu">
-            <div><a href="doctors.php">Athletes</a></div>
+            <div><a href="athletes.php">Athletes</a></div>
             <div><a href="secretaries.php">Secretaries</a></div>
             <div><a href="patients.php">Patients</a></div>
             <div><a href="appointments.php">Appointments</a></div>
