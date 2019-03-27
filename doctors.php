@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT  :: Doctors
+    <title>COJO OLYMPIC GAMES PROJECT :: Doctors
     </title>
     <style>
         body {
@@ -15,7 +15,7 @@
     <?php include "inc/resources.php" ?>
 </head>
 <body>
-    <div class="wrapper">
+    <div class="wrapper ">
     
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT</h1>
