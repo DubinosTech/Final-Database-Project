@@ -1,6 +1,6 @@
 # Final-Database-Project 
 
-This repository contains the final project for the Databases I course. This project makes use of Docker in order to complete the initial setup and to get you setup as quickly as possible. 
+This repository contains the final project for the Databases I class, Development of a database application.
 
 ### Diagram
 
