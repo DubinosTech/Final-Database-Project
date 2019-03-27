@@ -6,13 +6,19 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Doctors</title>
+    <title>COJO OLYMPIC GAMES PROJECT  :: Doctors
+    </title>
+    <style>
+        body {
+            background-image: url(" r/olympic1.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
+    
         <header>
-            <h1>Pharmabase</h1>
+            <h1>COJO OLYMPIC GAMES PROJECT</h1>
             <?php breadcrumb("Doctors") ?>
         </header>
 
