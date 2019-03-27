@@ -6,36 +6,38 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Drugs</title>
+    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Residences</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Drugs") ?>
+            <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
+            <?php breadcrumb("Residences") ?>
         </header>
 
-        <a href="newDrugView.php" class="new">New</a>
+        <?php flash(); ?>
+
+        <a href="newPatientView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Drug;";
+            $sql = "select * from pharmacy.Patient order by id;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Name", "Price", "Substance", "Generic?"]);
+                datatable(["ID", "First Name", "Last Name", "Birth Date", "Address", "Telephone", "Sex", "SSN"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 5; $i++) {
+                    for ($i = 0; $i < 8; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Drug", $row[0]);
-                    deleteCell("Drug", $row[0]);
+                    editCell("Patient", $row[0]);
+                    deleteCell("Patient", $row[0]);
 
                     echo "</tr>";
                 }

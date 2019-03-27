@@ -6,45 +6,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Patients</title>
+    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Officiels</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
-            <?php breadcrumb("Patients") ?>
+            <?php breadcrumb("Officiels") ?>
         </header>
 
-        <?php flash(); ?>
-
-        <a href="newPatientView.php" class="new">New</a>
+        <a href="newSecretaryView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Patient order by id;";
+            $sql = "select * from pharmacy.Secretary;";
             $ret = pg_query($db, $sql);
+            closeDB();
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "First Name", "Last Name", "Birth Date", "Address", "Telephone", "Sex", "SSN"]);
+                datatable(["ID", "First Name", "Last Name", "Address", "Telephone", ]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 8; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Patient", $row[0]);
-                    deleteCell("Patient", $row[0]);
+                    editCell("Secretary", $row[0]);
+                    deleteCell("Secretary", $row[0]);
 
                     echo "</tr>";
                 }
 
                 endDatatable();
             }
-            closeDB();
         ?>
     </div>
 </body>

@@ -6,28 +6,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Secretaries</title>
+    <title>Jeux Olympiques :: Épreuves</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
-            <?php breadcrumb("Secretaries") ?>
+            <h1>Pharmabase</h1>
+            <?php breadcrumb("Epreuves") ?>
         </header>
 
-        <a href="newSecretaryView.php" class="new">New</a>
+        <a href="newDrugView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Secretary;";
+            $sql = "select * from pharmacy.Drug;";
             $ret = pg_query($db, $sql);
-            closeDB();
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "First Name", "Last Name", "Address", "Telephone", ]);
+                datatable(["ID", "Name", "Price", "Substance", "Generic?"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
@@ -35,14 +34,15 @@
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Secretary", $row[0]);
-                    deleteCell("Secretary", $row[0]);
+                    editCell("Drug", $row[0]);
+                    deleteCell("Drug", $row[0]);
 
                     echo "</tr>";
                 }
 
                 endDatatable();
             }
+            closeDB();
         ?>
     </div>
 </body>

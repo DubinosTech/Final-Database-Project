@@ -6,14 +6,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Drugs</title>
+    <title>COJO :: Services Médicaux</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Conflicts") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Services Médicaux") ?>
         </header>
 
         <?php flash(); ?>

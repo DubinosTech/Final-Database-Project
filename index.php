@@ -15,12 +15,12 @@
 
         <div class="menu">
             <div><a href="athletes.php">Athletes</a></div>
-            <div><a href="secretaries.php">Secretaries</a></div>
-            <div><a href="patients.php">Patients</a></div>
-            <div><a href="appointments.php">Appointments</a></div>
-            <div><a href="drugs.php">Drug Catalog</a></div>
-            <div><a href="pathologies.php">Pathology Catalog</a></div>
-            <div><a href="conflicts.php">Conflict Catalog</a></div>
+            <div><a href="officiels.php">Officials</a></div>
+            <div><a href="residences.php">Residences</a></div>
+            <div><a href="servicetransport.php">Services Transport</a></div>
+            <div><a href="epreuves.php">Epreuves</a></div>
+            <div><a href="employees.php">Employees</a></div>
+            <div><a href="servicemedical.php">Services Médicaux</a></div>
             <div><a href="prescriptions.php">Prescriptions</a></div>
             <div><a href="options.php">Options</a></div>
         </div>

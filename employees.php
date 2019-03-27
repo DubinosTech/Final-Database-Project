@@ -6,14 +6,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Pathologies</title>
+    <title>COJO :: Employees</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Pathologies") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Employees") ?>
         </header>
 
         <a href="newPathologyView.php" class="new">New</a>

@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT  :: Appointments</title>
+    <title>COJO OLYMPIC GAMES PROJECT  :: Services Transport</title>
     <style>
         body {
             background-image: url(" r/athlete.jpg");
@@ -17,7 +17,7 @@
     <div class="wrapper">
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT</h1>
-            <?php breadcrumb("Appointments") ?>
+            <?php breadcrumb("Services Transport") ?>
         </header>
 
         <a href="newAppointmentView.php" class="new">New</a>
