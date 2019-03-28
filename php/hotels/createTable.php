@@ -14,7 +14,7 @@ $credentials = $_SESSION["credentials"];
 $db = pg_connect( "$host $port $dbname $credentials"  );
 $sql =<<<EOF
       CREATE TABLE TEST
-      (ID INT PRIMARY KEY     NOT NULL,
+      (ID INT PRIMARY KEY     ,
       NAME           TEXT    NOT NULL,
       AGE            INT     NOT NULL,
       ADDRESS        CHAR(50),
