@@ -6,7 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT  :: Athletes
+    <title>COJO OLYMPIC GAMES PROJECT  :: Athlètes
     </title>
     <style>
         body {

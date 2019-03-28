@@ -14,14 +14,14 @@
         </header>
 
         <div class="menu">
-            <div><a href="doctors.php">Athletes</a></div>
-            <div><a href="secretaries.php">Secretaries</a></div>
-            <div><a href="patients.php">Patients</a></div>
-            <div><a href="appointments.php">Appointments</a></div>
-            <div><a href="drugs.php">Drug Catalog</a></div>
-            <div><a href="pathologies.php">Pathology Catalog</a></div>
-            <div><a href="conflicts.php">Conflict Catalog</a></div>
-            <div><a href="prescriptions.php">Prescriptions</a></div>
+            <div><a href="doctors.php">Athlètes</a></div>
+            <div><a href="secretaries.php">Officiels</a></div>
+            <div><a href="patients.php">Résidences</a></div>
+            <div><a href="appointments.php">Services Transport</a></div>
+            <div><a href="drugs.php">Épreuves</a></div>
+            <div><a href="pathologies.php">Employés</a></div>
+            <div><a href="conflicts.php">Services Médicaux</a></div>
+            <div><a href="prescriptions.php">Installations Olympiques</a></div>
             <div><a href="options.php">Options</a></div>
         </div>
     </div>
