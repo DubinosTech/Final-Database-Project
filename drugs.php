@@ -6,27 +6,32 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Drugs</title>
+    <title>COJO :: Épreuves</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Drugs") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Épreuves") ?>
         </header>
 
         <a href="newDrugView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Drug;";
+            $sql = <<<EOF
+            select d.id, d.name, d.price, d.substance, d.generic, s.name
+            from pharmacy.Drug d join
+            (select id, id || ': ' || drug || ' ' || doctor as name from pharmacy.DrugScript) s
+            on d.id = s.id;
+EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Name", "Price", "Substance", "Generic?"]);
+                datatable(["ID", "Nom", "Discipline", "Installation", "Heure"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";

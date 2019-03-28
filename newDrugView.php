@@ -6,21 +6,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: New Drug</title>
+    <title>COJO :: Nouvelle Épreuve</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("New Drug") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Nouvelle Épreuve") ?>
         </header>
 
         <form action="doNewDrug.php" method="POST">
-            Name: <input type="text" name="name"><br />
-            Price: <input type="number" name="price" min="0" step="0.01"><br />
-            Substance: <input type="text" name="substance"><br />
-            Generic?: <input type="checkbox" name="generic" value="TRUE"><br />
+            Nom: <input type="text" name="name"><br />
+            Discipline: <input type="text" name="name"><br />
+            Installation: <input type="text" name="name"><br />
+            Heure: <input type="text" name="name"><br />
             <input type="submit" value="Submit">
         </form>
 

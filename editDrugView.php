@@ -17,14 +17,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Edit Drug</title>
+    <title>COJO :: Modifier Épreuve</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Edit Drug") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Modifier Épreuve") ?>
         </header>
 
         <?php
@@ -33,10 +33,9 @@
             ?><form action="doEditDrug.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
                 Name: <input type="text" name="name" value="<?php echo $r[1] ?>"><br />
-                Price: <input type="number" name="price" min="0" step="0.01" value="<?php echo $r[2]; ?>"><br />
-                Substance: <input type="text" name="substance" value="<?php echo $r[3] ?>"><br />
-                <?php $checked = ""; if ($r[4] == "t") { $checked = "checked"; } ?>
-                Generic?: <input type="checkbox" name="generic" <?php echo $checked; ?>><br />
+                Discipline: <input type="text" name="discipline" min="0" step="0.01" value="<?php echo $r[2]; ?>"><br />
+                Installation: <input type="text" name="installation" value="<?php echo $r[3] ?>"><br />
+                Heure: <input type="text" name="time" value="<?php echo $r[4] ?>"><br />
                 <input type="submit" value="Submit">
             </form> <?php
         ?>
