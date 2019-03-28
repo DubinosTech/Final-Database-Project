@@ -6,7 +6,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>COJO OLYMPIC GAMES PROJECT :: Doctors
+
+    <title>COJO OLYMPIC GAMES PROJECT  :: Athletes
+
     </title>
     <style>
         body {
@@ -19,7 +23,7 @@
     
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT</h1>
-            <?php breadcrumb("Doctors") ?>
+            <?php breadcrumb("Athletes") ?>
         </header>
 
         <a href="newDoctorView.php" class="new">New</a>
