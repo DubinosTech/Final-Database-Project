@@ -6,19 +6,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Patients</title>
+    <title>COJO :: Residences</title>
+    <style>
+        body {
+            background-image: url(" r/residence.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
-            <?php breadcrumb("Patients") ?>
+            <h1>COJO </h1>
+            <?php breadcrumb("Residences") ?>
         </header>
 
         <?php flash(); ?>
 
-        <a href="newPatientView.php" class="new">New</a>
+        <a href="newPatientView.php" class="new"> Ajouter nouvelle residence</a>
 
         <?php
             connectDB();
@@ -28,11 +32,11 @@
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "First Name", "Last Name", "Birth Date", "Address", "Telephone", "Sex", "SSN"]);
+                datatable(["id","nom_Residence", "capacite_Residence", "telephone_Residence", "adresse_Residence"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 8; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 

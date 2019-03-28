@@ -6,10 +6,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT  :: Appointments</title>
+    <title>COJO OLYMPIC GAMES PROJECT  :: Service de transport</title>
     <style>
         body {
-            background-image: url(" r/athlete.jpg");
+            background-image: url(" r/transport.jpg");
         } </style>
     <?php include "inc/resources.php" ?>
 </head>
@@ -17,10 +17,10 @@
     <div class="wrapper">
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT</h1>
-            <?php breadcrumb("Appointments") ?>
+            <?php breadcrumb("Service de transport") ?>
         </header>
 
-        <a href="newAppointmentView.php" class="new">New</a>
+        <a href="newAppointmentView.php" class="new">Nouveau trajet</a>
 
         <?php
             connectDB();
@@ -36,7 +36,7 @@ EOF;
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Start", "End", "Remarks", "Patient", "Doctor"]);
+                datatable(["ID", "Depart", "Arrivee", "Itineraire", "FrequenceHoraire"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";

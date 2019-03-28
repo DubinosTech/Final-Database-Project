@@ -21,26 +21,22 @@ CREATE TABLE Doctor (
     secretary INTEGER REFERENCES Secretary ON DELETE SET NULL
 );
 
-CREATE TABLE Patient (
-    id SERIAL PRIMARY KEY,
-    firstName VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL,
-    birthDate DATE NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    tel VARCHAR(255) NOT NULL,
-    sex CHAR(1) NOT NULL,
-    CONSTRAINT checkSex CHECK (sex = 'M' OR sex = 'F'),
-    ssn VARCHAR(255) UNIQUE NOT NULL
+CREATE TABLE Patient (id SERIAL PRIMARY KEY,
+	nom_Residence CHAR(30),
+    capacite_Residence CHAR(30),
+    adresse_Residence CHAR(30),
+    telephone_Residence CHAR(30)
 );
 
 CREATE TABLE Appointment (
     id SERIAL PRIMARY KEY,
-    date TIMESTAMP NOT NULL,
-    endDate TIMESTAMP NOT NULL,
-    remarks TEXT,
-    patient INTEGER REFERENCES Patient NOT NULL,
-    doctor INTEGER REFERENCES Doctor NOT NULL,
-    CHECK (date < endDate)
+    depart TIMESTAMP NOT NULL,
+    arrivee TIMESTAMP NOT NULL,
+    itineraire TEXT,
+    frequenceHoraire CHAR(30),
+    --patient INTEGER REFERENCES Patient NOT NULL,
+    --doctor INTEGER REFERENCES Doctor NOT NULL,
+    CHECK (depart < endDate)
 );
 
 CREATE TABLE Drug (

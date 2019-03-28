@@ -17,14 +17,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Edit Patient</title>
+    <title>COJO :: Modifier Residence</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Edit Patient") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Modifier Residence") ?>
         </header>
 
         <?php
@@ -32,13 +32,13 @@
 
             ?><form action="doEditPatient.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
-                First name: <input type="text" name="firstName" value="<?php echo $r[1] ?>"><br />
-                Last name: <input type="text" name="lastName" value="<?php echo $r[2] ?>"><br />
-                Birth date: <input type="text" class="datepicker" name="birthDate" value="<?php echo $r[3] ?>"><br />
-                Address: <input type="text" name="address" value="<?php echo $r[4] ?>"><br />
-                Tel: <input type="text" name="tel" value="<?php echo $r[5] ?>"><br />
-                Sex: <?php sexSelect($r[6]) ?><br />
-                SSN: <input type="text" name="ssn" value="<?php echo $r[7] ?>"><br />
+                Nom_Residence: <input type="text" name="nom residence" value="<?php echo $r[1] ?>"><br />
+                Capacite_Residence: <input type="text" name="lastName" value="<?php echo $r[2] ?>"><br />
+                <!--Birth date: <input type="text" class="datepicker" name="birthDate" value="<?php echo $r[3] ?>"><br />-->
+                Adresse_Residence: <input type="text" name="address" value="<?php echo $r[4] ?>"><br />
+                Telephone_Residence: <input type="text" name="tel" value="<?php echo $r[5] ?>"><br />
+                <!--Sex: <?php sexSelect($r[6]) ?><br />-->
+                <!--SSN: <input type="text" name="ssn" value="<?php echo $r[7] ?>"><br />-->
                 <input type="submit" value="Submit">
             </form> <?php
         ?>
