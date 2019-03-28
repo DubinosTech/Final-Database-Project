@@ -6,14 +6,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Pathologies</title>
+    <title>COJO :: Employés</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Pathologies") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Employés") ?>
         </header>
 
         <a href="newPathologyView.php" class="new">New</a>
@@ -26,11 +26,11 @@
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Name"]);
+                datatable(["ID", "Nom", "Prénom","Adresse permanente","Adresse olympique","Téléphone"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 2; $i++) {
+                    for ($i = 0; $i < 6; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 

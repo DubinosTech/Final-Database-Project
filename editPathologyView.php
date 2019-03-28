@@ -17,14 +17,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Edit Pathology</title>
+    <title>COJO :: Modifier Employé</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Edit Pathology") ?>
+            <h1>COJO</h1>
+            <?php breadcrumb("Modifier Employé") ?>
         </header>
 
         <?php
@@ -32,7 +32,11 @@
 
             ?><form action="doEditPathology.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
-                Name: <input type="text" name="name" value="<?php echo $r[1] ?>"><br />
+                Nom: <input type="text" name="Nom" value="<?php echo $r[1] ?>"><br />
+                Prénom: <input type="text" name="Prénom" value="<?php echo $r[2] ?>"><br />
+                Adresse permanente: <input type="text" name="Adresse permanente" value="<?php echo $r[3] ?>"><br />
+                Adresse olympique: <input type="text" name="Adresse olympique" value="<?php echo $r[4] ?>"><br />
+                Téléphone: <input type="text" name="Telephone" value="<?php echo $r[5] ?>"><br />
                 <input type="submit" value="Submit">
             </form> <?php
         ?>
