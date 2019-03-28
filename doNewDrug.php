@@ -5,10 +5,10 @@
 
     $sql = "insert into pharmacy.Drug (name, price, substance, generic) values ($1, $2, $3, $4)";
     $ret = pg_query_params($db, $sql,
-        [$_POST["name"],
-        $_POST["price"],
-        $_POST["substance"],
-        getBoolParam("generic")]);
+        [$_POST["nomEpreuve "],
+        $_POST["nomDiscipline"],
+        $_POST["iNom"],
+        $_POST["heure(à ajouter)"]);
     closeDB();
 
     if (!$ret) {
