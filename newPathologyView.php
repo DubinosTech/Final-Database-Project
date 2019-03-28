@@ -17,11 +17,11 @@
         </header>
 
         <form action="doNewPathology.php" method="POST">
-            Nom: <input type="text" name="name"><br />
-            Prénom: <input type="text" name="name"><br />
-            Adresse permanente: <input type="text" name="name"><br />
-            Adresse olympique: <input type="text" name="name"><br />
-            Téléphone: <input type="text" name="name"><br />
+            Nom: <input type="text" name="Nom"><br />
+            Prénom: <input type="text" name="Prénom"><br />
+            Adresse permanente: <input type="text" name="Adresse permanente"><br />
+            Adresse olympique: <input type="text" name="Adresse olympique"><br />
+            Téléphone: <input type="text" name="telephone"><br />
             <input type="submit" value="Submit">
         </form>
 

@@ -32,8 +32,8 @@
 
             ?><form action="doEditDrug.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
-                Name: <input type="text" name="name" value="<?php echo $r[1] ?>"><br />
-                Discipline: <input type="text" name="discipline" min="0" step="0.01" value="<?php echo $r[2]; ?>"><br />
+                Name: <input type="text" name="Name" value="<?php echo $r[1] ?>"><br />
+                Discipline: <input type="text" name="discipline" value="<?php echo $r[2]; ?>"><br />
                 Installation: <input type="text" name="installation" value="<?php echo $r[3] ?>"><br />
                 Heure: <input type="text" name="time" value="<?php echo $r[4] ?>"><br />
                 <input type="submit" value="Submit">

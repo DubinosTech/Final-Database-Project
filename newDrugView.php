@@ -17,10 +17,10 @@
         </header>
 
         <form action="doNewDrug.php" method="POST">
-            Nom: <input type="text" name="name"><br />
-            Discipline: <input type="text" name="name"><br />
-            Installation: <input type="text" name="name"><br />
-            Heure: <input type="text" name="name"><br />
+            Nom: <input type="text" name="Nom"><br />
+            Discipline: <input type="text" name="Discipline"><br />
+            Installation: <input type="text" name="Installation"><br />
+            Heure: <input type="text" name="Heure"><br />
             <input type="submit" value="Submit">
         </form>
 
