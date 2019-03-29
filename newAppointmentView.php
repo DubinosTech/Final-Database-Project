@@ -25,8 +25,6 @@
             Arrivee: <input type="text" name="arrivee" class="datetimepicker" /><br />
             Itineraire: <textarea name="Itineraire" cols="90" rows="10"></textarea><br />
             FrequenceHoraire: <textarea name="FrequenceHoraire"cols="90" rows="10"></textarea><br />
-            <!--Patient: <?php patientSelect(); ?><br /> -->
-            <!--Doctor: <?php doctorSelect(); ?><br />-->
             <input type="submit" value="Submit">
         </form>
 

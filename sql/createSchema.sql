@@ -21,22 +21,20 @@ CREATE TABLE Doctor (
     secretary INTEGER REFERENCES Secretary ON DELETE SET NULL
 );
 
-CREATE TABLE Patient (id SERIAL PRIMARY KEY,
-	nom_Residence CHAR(30),
-    capacite_Residence CHAR(30),
-    adresse_Residence CHAR(30),
-    telephone_Residence CHAR(30)
+CREATE TABLE Residence (id SERIAL PRIMARY KEY,
+	nom_Residence VARCHAR(30),
+    capacite_Residence VARCHAR(30),
+    adresse_Residence VARCHAR(30),
+    telephone_Residence VARCHAR(30)
 );
 
-CREATE TABLE Appointment (
+CREATE TABLE ServiceTransport (
     id SERIAL PRIMARY KEY,
     depart TIMESTAMP NOT NULL,
     arrivee TIMESTAMP NOT NULL,
     itineraire TEXT,
-    frequenceHoraire CHAR(30),
-    --patient INTEGER REFERENCES Patient NOT NULL,
-    --doctor INTEGER REFERENCES Doctor NOT NULL,
-    CHECK (depart < endDate)
+    frequenceHoraire VARCHAR(30),
+    CHECK (depart < arrivee)
 );
 
 CREATE TABLE Drug (
@@ -51,7 +49,7 @@ CREATE TABLE DrugScript (
     id SERIAL PRIMARY KEY,
     drug INTEGER REFERENCES Drug NOT NULL,
     doctor INTEGER REFERENCES Doctor NOT NULL, -- replace with appointment
-    patient INTEGER REFERENCES Patient NOT NULL,
+    residence INTEGER REFERENCES Residence NOT NULL,
     date DATE NOT NULL,
     validDays INTEGER
 );
@@ -60,7 +58,7 @@ CREATE TABLE ProcScript (
     id SERIAL PRIMARY KEY,
     procName VARCHAR(255) NOT NULL,
     doctor INTEGER REFERENCES Doctor NOT NULL,
-    patient INTEGER REFERENCES Patient NOT NULL,
+    residence INTEGER REFERENCES Residence NOT NULL,
     date DATE NOT NULL
 );
 
@@ -83,6 +81,6 @@ CREATE TABLE DrugPathologyConflict (
 
 CREATE TABLE PatientPathology (
     id SERIAL PRIMARY KEY,
-    patient INTEGER REFERENCES Patient NOT NULL,
+    residence INTEGER REFERENCES Residence NOT NULL,
     pathology INTEGER REFERENCES Pathology NOT NULL
 );

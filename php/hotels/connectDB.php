@@ -5,7 +5,7 @@ session_start();
 $host = "host=localhost";
 $port = "port=5432";
 $dbname = "dbname=hotel";
-$credentials = "user=postgres password=admin";
+$credentials = "user=postgres password=didine";
 
 function connectDB($host, $port, $dbname, $credentials) {
 	$db = pg_connect("$host $port $dbname $credentials");

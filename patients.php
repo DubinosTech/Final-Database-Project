@@ -26,7 +26,7 @@
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Patient order by id;";
+            $sql = "select * from pharmacy.Residence order by id;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
@@ -40,8 +40,8 @@
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Patient", $row[0]);
-                    deleteCell("Patient", $row[0]);
+                    editCell("Residence", $row[0]);
+                    deleteCell("Residence", $row[0]);
 
                     echo "</tr>";
                 }

@@ -21,13 +21,10 @@
         </header>
 
         <form action="doNewPatient.php" method="POST">
-            Nom_Residence: <input type="text" name="firstName"><br />
-            Capacite_Residence: <input type="text" name="lastName"><br />
-            <!--Birth date: <input type="text" class="datepicker" name="birthDate"><br /> -->
-            Adresse_Residences: <input type="text" name="address"><br />
-            Telephone_Residence: <input type="text" name="tel"><br />
-            <!--Sex: <?php sexSelect(); ?><br />-->
-            <!--SSN: <input type="text" name="ssn"><br />-->
+            Nom_Residence: <input type="text" name="nom_Residence"><br />
+            Capacite_Residence: <input type="text" name="capacite_Residence"><br />
+            Adresse_Residence: <input type="text" name="adresse_Residence"><br />
+            Telephone_Residence: <input type="text" name="telephone_Residence"><br />
             <input type="submit" value="Submit">
         </form>
 

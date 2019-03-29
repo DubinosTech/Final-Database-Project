@@ -3,13 +3,12 @@
 
     connectDB();
 
-    $sql = "insert into pharmacy.Appointment (date, endDate, remarks, patient, doctor) values ($1, $2, $3, $4, $5)";
+    $sql = "insert into pharmacy.ServiceTransport (depart, arrivee, itineraire, frequenceHoraire) values ($1, $2, $3, $4)";
     $ret = pg_query_params($db, $sql,
         [$_POST["date"],
-        $_POST["endDate"],
-        $_POST["remarks"],
-        $_POST["patient"],
-        $_POST["doctor"]]);
+        $_POST["arrivee"],
+        $_POST["itineraire"],
+        $_POST["frequenceHoraire"]]);
     closeDB();
 
     if (!$ret) {

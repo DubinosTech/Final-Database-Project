@@ -24,13 +24,14 @@
 
         <?php
             connectDB();
-            $sql = <<<EOF
-            select a.id, a.date, a.endDate, p.firstName || ' '  || p.lastName, 
+           // $sql = <<<EOF
+        /*select a.id, a.date, a.endDate, p.firstName || ' '  || p.lastName, 
                 d.firstName || ' ' || d.lastName
-            from pharmacy.Appointment a
+            from pharmacy.Service_Transport a
             join pharmacy.Patient p on a.patient = p.id
             join pharmacy.Doctor d on a.doctor = d.id;
-EOF;
+EOF;*/
+            $sql = "select * from pharmacy.ServiceTransport order by id;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
@@ -48,8 +49,8 @@ EOF;
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Appointment", $row[0]);
-                    deleteCell("Appointment", $row[0]);
+                    editCell("ServiceTransport", $row[0]);
+                    deleteCell("ServiceTransport", $row[0]);
 
                     echo "</tr>";
                 }

@@ -10,7 +10,7 @@ $db = null;
 
 function connectDB() {
     global $db;
-    $db = pg_connect("host=localhost port=5432 dbname=pharmacy user=postgres password=admin");
+    $db = pg_connect("host=localhost port=5432 dbname=pharmacy user=postgres password=didine");
     if (!$db) {
         echo "Error : Unable to open database\n";
     }
@@ -80,9 +80,9 @@ function doctorSelect($id = -1) {
 }
 
 function patientSelect($id = -1) {
-    echo "<select name='patient'>";
+    echo "<select name='Residence'>";
     connectDB();
-    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Patient order by id;");
+    $ret = pg_query("select id, id::text || ': ' || nom_Residence || ' ' || adresse_Residence as name from pharmacy.Residence order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
