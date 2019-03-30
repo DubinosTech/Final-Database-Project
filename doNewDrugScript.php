@@ -2,14 +2,14 @@
     include_once "inc/prelude.php";
 
     connectDB();
-
-    $sql = "insert into pharmacy.DrugScript (drug, doctor, patient, date, validDays) values ($1, $2, $3, $4, $5)";
+    #I.iId, I.iNom, I.adresse, I.usage, I.description, I.capacite
+    $sql = "insert into pharmacy.Installation (iNom, adresse, usage, description, capacite) values ($1, $2, $3, $4, $5)";
     $ret = pg_query_params($db, $sql,
-        [$_POST["drug"],
-        $_POST["doctor"],
-        $_POST["patient"],
-        $_POST["date"],
-        $_POST["validDays"]]);
+        [$_POST["iNom"],
+        $_POST["adresse"],
+        $_POST["usage"],
+        $_POST["description"],
+        $_POST["capacite"]]);
     closeDB();
 
     if (!$ret) {

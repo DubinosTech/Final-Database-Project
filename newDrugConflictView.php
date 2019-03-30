@@ -6,19 +6,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: New Drug Conflict</title>
+    <title>COJO OLYMPIC GAMES PROJECT:: Service Medicale</title>
+    <style>
+        body {
+            background-image: url(" r/olympic1.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("New Drug Conflict") ?>
+            <h1>COJO OLYMPIC GAMES</h1>
+            <?php breadcrumb("Service Medicale") ?>
         </header>
 
         <form action="doNewDrugConflict.php" method="POST">
-            Substance 1: <?php substanceSelect("substance1") ?><br />
-            Substance 2: <?php substanceSelect("substance2") ?><br />
+            Nom: <input type="text" name="snom"><br />
+            Description: <input type="text" name="sdescription"><br />
+            Adresse: <input type="text" name="sadresse"><br />
+            Telephone Number: <input type="text" name="stelephone"><br />
             <input type="submit" value="Submit">
         </form>
 
