@@ -100,10 +100,9 @@ CREATE TABLE Installation(
 	capacite CHAR(30) NOT NULL);
 	
 CREATE TABLE ServiceMedical(
-		id SERIAL,
+		id SERIAL PRIMARY KEY,
 		snom CHAR(30) NOT NULL,
         sdescription CHAR(50) ,
         sadresse CHAR(30),
-        stelephone CHAR(30),
-        PRIMARY KEY(snom));
+        stelephone CHAR(30);
 	
