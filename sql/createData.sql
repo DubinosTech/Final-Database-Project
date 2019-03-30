@@ -56,6 +56,6 @@ INSERT INTO Installation VALUES (DEFAULT, 'Minto Field', '801 King Adward ave', 
 INSERT INTO Installation VALUES (DEFAULT, 'MontPetit Field', '801 King Adward ave', 'For FootBall', ' & Tests', '20'); -- 4
 
 
-INSERT INTO ServiceMedical VALUES(DEFAULT, 'Marie-Curie Clinic', 'General inquieres', '105 Marie-Curie ave', '555-555-4456')
-INSERT INTO ServiceMedical VALUES(DEFAULT, 'Marie', 'General inquieres', '105 Marie-Curie ave', '555-555-4456')
-INSERT INTO ServiceMedical VALUES(DEFAULT, '-Curie Clinic', 'General inquieres', '105 Marie-Curie ave', '555-555-4456')
+INSERT INTO ServiceMedical VALUES(DEFAULT, 'Marie-Curie Clinic', 'General inquieres', '105 Marie-Curie ave', '555-555-4456');
+INSERT INTO ServiceMedical VALUES(DEFAULT, 'Marie', 'General inquieres', '105 Marie-Curie ave', '555-555-4456');
+INSERT INTO ServiceMedical VALUES(DEFAULT, '-Curie Clinic', 'General inquieres', '105 Marie-Curie ave', '555-555-4456');

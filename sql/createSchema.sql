@@ -104,5 +104,5 @@ CREATE TABLE ServiceMedical(
 		snom CHAR(30) NOT NULL,
         sdescription CHAR(50) ,
         sadresse CHAR(30),
-        stelephone CHAR(30);
+        stelephone CHAR(30));
 	
