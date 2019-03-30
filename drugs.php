@@ -31,7 +31,7 @@ EOF;
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Nom", "Discipline", "Installation");
+                datatable(["ID", "Nom", "Discipline", "Installation"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
