@@ -31,11 +31,11 @@ EOF;
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Nom", "Discipline", "Installation", "Heure"]);
+                datatable(["ID", "Nom", "Discipline", "Installation");
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 5; $i++) {
+                    for ($i = 0; $i < 4; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 

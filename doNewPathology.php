@@ -4,7 +4,7 @@
     connectDB();
 
     $sql = "insert into pharmacy.Pathology (name, firstName,adressePermanente,adresseOlympique,telephone) values ($1,$2,$3,$4,$5)";
-    $ret = pg_query_params($db, $sql,[$_POST["name"],$_POST["firstName"],$_POST["adressePermanente"],$_POST["adresseOlympique"],$_POST["tel"]]);
+    $ret = pg_query_params($db, $sql,[$_POST["pnomDeFamille"],$_POST["pprenom"],$_POST["pAdressePermanente"],$_POST["pAdresseVillage"],$_POST["telephone"]]);
     closeDB();
 
     if (!$ret) {
