@@ -13,7 +13,7 @@
     <div class="wrapper">
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT</h1>
-            <?php breadcrumb("New Secretary") ?>
+            <?php breadcrumb("Ajouter un officiel") ?>
         </header>
 
         <form action="doNewSecretary.php" method="POST">
