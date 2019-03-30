@@ -4,14 +4,16 @@
     connectDB();
 
     $sql = <<<EOF
-        update pharmacy.DrugConflict
-        set substance1=$1, substance2=$2
-        where id = $3;
+        update pharmacy.ServiceMedical
+        set snom=$1, sdescription=$2, sadresse =$3, stelephone=$4
+        where id = $5;
 EOF;
 
     $ret = pg_query_params($db, $sql,
-        [$_POST["substance1"],
-        $_POST["substance2"],
+        [$_POST["snom"],
+        $_POST["sdescription"],
+        $_POST["sadresse"],
+        $_POST["stelephone"],
         $_POST["id"]]);
     closeDB();
 

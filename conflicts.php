@@ -6,71 +6,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Drugs</title>
+    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Service Medicale</title>
+    <style>
+        body {
+            background-image: url(" r/olympic1.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Conflicts") ?>
+            <h1>COJO OLYMPIC GAMES</h1>
+            <?php breadcrumb("Service Medicale") ?>
         </header>
 
         <?php flash(); ?>
 
-        <h2>Drug-Drug Conflicts</h2>
+        <h2>Tableau des Services Medicales</h2>
 
         <a href="newDrugConflictView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.DrugConflict;";
+            $sql = <<<EOF
+                select S.id, S.snom, S.sdescription, S.sadresse, S.stelephone
+                from pharmacy.ServiceMedical S
+EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Substance 1", "Substance 2"]);
+                datatable(["ID", "Nom", "Description", "Adresse", "Telephone Number"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 3; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 
                     editCell("DrugConflict", $row[0]);
                     deleteCell("DrugConflict", $row[0]);
-
-                    echo "</tr>";
-                }
-
-                endDatatable();
-            }
-            closeDB();
-        ?>
-
-        <h2>Drug-Pathology Conflicts</h2>
-
-        <a href="newDrugPathologyConflictView.php" class="new">New</a>
-
-        <?php
-            connectDB();
-            $sql = "select c.id, c.substance, p.name from pharmacy.DrugPathologyConflict c join pharmacy.Pathology p on c.pathology = p.id;";
-            $ret = pg_query($db, $sql);
-            if(!$ret) {
-                echo pg_last_error($db);
-            }
-            else {
-                datatable(["ID", "Substance", "Pathology"]);
-
-                while ($row = pg_fetch_row($ret)) {
-                    echo "<tr>";
-                    for ($i = 0; $i < 3; $i++) {
-                        echo "<td>", $row[$i], "</td>";
-                    }
-
-                    editCell("DrugPathologyConflict", $row[0]);
-                    deleteCell("DrugPathologyConflict", $row[0]);
 
                     echo "</tr>";
                 }

@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "delete from pharmacy.DrugConflict where id = $1;";
+    $sql = "delete from pharmacy.ServiceMedical where id = $1;";
 
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();

@@ -3,10 +3,13 @@
 
     connectDB();
 
-    $sql = "insert into pharmacy.DrugConflict (substance1, substance2) values ($1, $2)";
+    $sql = "insert into pharmacy.ServiceMedical (snom, sdescription, sadresse, stelephone) values ($1, $2, $3, $4)";
     $ret = pg_query_params($db, $sql,
-        [$_POST["substance1"],
-        $_POST["substance2"]]);
+        [$_POST["snom"],
+        $_POST["sdescription"],
+        $_POST["sadresse"],
+        $_POST["stelephone"]
+        ]);
     closeDB();
 
     if (!$ret) {
