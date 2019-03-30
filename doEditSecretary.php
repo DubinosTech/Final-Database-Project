@@ -4,12 +4,12 @@
     connectDB();
 
     $sql = <<<EOF
-        update pharmacy.Secretary
-        set firstName=$1, lastName=$2, address=$3, tel=$4
-        where id = $5;
+        update pharmacy.Officiel
+        set pprenom=$1, pnomDeFamille=$2, pAdressePermanente=$3, pAdresseVillage=$4, otype=$5
+        where id = $6;
 EOF;
 
-    $ret = pg_query_params($db, $sql, [$_POST["firstName"], $_POST["lastName"], $_POST["address"], $_POST["tel"], $_POST["id"]]);
+    $ret = pg_query_params($db, $sql, [$_POST["pprenom"], $_POST["pnomDeFamille"], $_POST["pAdressePermanente"], $_POST["pAdresseVillage"], $_POST["otype"], $_POST["id"]]);
     closeDB();
 
     if (!$ret) {

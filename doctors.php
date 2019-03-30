@@ -27,10 +27,10 @@
         <?php
             connectDB();
             $sql = <<<EOF
-            select d.id, d.firstName, d.lastName, d.address, d.tel, d.specialty, s.name
-            from pharmacy.Doctor d join
-            (select id, id || ': ' || firstName || ' ' || lastName as name from pharmacy.Secretary) s
-            on d.secretary = s.id;
+            select d.id, d.pprenom, d.pnomDeFamille, d.pAdressePermanente, d.pAdresseVillage, d.aPays, d.aMedaille,s.name
+            from pharmacy.Athlete d join
+            (select id, id || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Officiel) s
+            on d.officiel = s.id;
 EOF;
             $ret = pg_query($db, $sql);
             closeDB();
@@ -39,11 +39,11 @@ EOF;
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "First Name", "Last Name", "Address", "Telephone", "Specialty", "Secretary"]);
+                datatable(["ID", "Prenom", "Nom", "Address Permanante", "Adresse Village", "Medaille", "Pays", "Superviseur"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 7; $i++) {
+                    for ($i = 0; $i < 8; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 
