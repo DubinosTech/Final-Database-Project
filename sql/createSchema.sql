@@ -90,3 +90,19 @@ CREATE TABLE PatientPathology (
     patient INTEGER REFERENCES Patient NOT NULL,
     pathology INTEGER REFERENCES Pathology NOT NULL
 );
+---------- Nos Tables 
+CREATE TABLE Installation(
+	iId SERIAL PRIMARY KEY,
+	iNom CHAR(30) NOT NULL,
+	adresse CHAR(30) NOT NULL,
+	usage CHAR(30) NOT NULL,
+	description CHAR(50) NOT NULL,
+	capacite CHAR(30) NOT NULL);
+	
+CREATE TABLE ServiceMedical(
+		id SERIAL PRIMARY KEY,
+		snom CHAR(30) NOT NULL,
+        sdescription CHAR(50) ,
+        sadresse CHAR(30),
+        stelephone CHAR(30);
+	

@@ -6,35 +6,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Prescriptions</title>
+    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Installation Olympique</title>
+    <style>
+        body {
+            background-image: url(" r/olympic1.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
-            <?php breadcrumb("Prescriptions") ?>
+            <?php breadcrumb("Installation Olympique") ?>
         </header>
 
-        <h2>Drug Prescriptions</h2>
+        <h2>Tableau des Installations Olympiques</h2>
 
         <a href="newDrugScriptView.php" class="new">New</a>
 
         <?php
             connectDB();
             $sql = <<<EOF
-                select s.id, d.name, m.lastName, p.lastName, s.date, s.validDays
-                from pharmacy.DrugScript s
-                join pharmacy.Drug d on s.drug = d.id
-                join pharmacy.Doctor m on s.doctor = m.id
-                join pharmacy.Patient p on s.patient = p.id;
+                select I.iId, I.iNom, I.adresse, I.usage, I.description, I.capacite
+                from pharmacy.Installation I
 EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Drug", "Doctor", "Patient", "Date", "Valid Days"]);
+                datatable(["ID", "Nom", "Adresse", "Usage", "Description", "Capacite"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
@@ -53,41 +54,6 @@ EOF;
             closeDB();
         ?>
 
-        <h2>Procedure Prescriptions</h2>
-
-        <a href="newProcScriptView.php" class="new">New</a>
-
-        <?php
-            connectDB();
-            $sql = <<<EOF
-                select s.id, s.procName, m.lastName, p.lastName, s.date
-                from pharmacy.ProcScript s
-                join pharmacy.Doctor m on s.doctor = m.id
-                join pharmacy.Patient p on s.patient = p.id;
-EOF;
-            $ret = pg_query($db, $sql);
-            if(!$ret) {
-                echo pg_last_error($db);
-            }
-            else {
-                datatable(["ID", "Procedure", "Doctor", "Patient", "Date"]);
-
-                while ($row = pg_fetch_row($ret)) {
-                    echo "<tr>";
-                    for ($i = 0; $i < 5; $i++) {
-                        echo "<td>", $row[$i], "</td>";
-                    }
-
-                    editCell("ProcScript", $row[0]);
-                    deleteCell("ProcScript", $row[0]);
-
-                    echo "</tr>";
-                }
-
-                endDatatable();
-            }
-            closeDB();
-        ?>
     </div>
 </body>
 </html>

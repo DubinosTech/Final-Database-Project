@@ -3,11 +3,11 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.DrugScript where id = $1";
+    $sql = "select * from pharmacy.Installation where iId = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
-        setFlash("This isn't the script you're looking for.");
+        setFlash("This isn't the installation Olympique script you're looking for.");
         header("Location: prescriptions.php");
         exit;
     }
@@ -17,26 +17,29 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Edit Drug Script</title>
+    <title>COJO Project :: Edit Installation</title>
+    <style>
+        body {
+            background-image: url(" r/olympic1.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Edit Drug Script") ?>
+            <h1>COJO Project</h1>
+            <?php breadcrumb("Edit Installation Olympique") ?>
         </header>
-
         <?php  $r = pg_fetch_row($ret); ?>
         <form action="doEditDrugScript.php" method="POST">
-            <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
-            Drug: <?php drugSelect($r[1]) ?><br />
-            Doctor: <?php doctorSelect($r[2]) ?><br />
-            Patient: <?php patientSelect($r[3]) ?><br />
-            Date: <input type="text" class="datepicker" name="date" value="<?php echo $r[4] ?>"><br />
-            Valid Days: <input type="number" name="validDays" value="<?php echo $r[5] ?>" /><br />
-            <input type="submit" value="Submit">
-        </form>
+                <input type="hidden" name="iId" value="<?php echo $r[0] ?>"><br />
+                Nom: <input type="text" name="iNom" value="<?php echo $r[1] ?>"><br />
+                Adresse: <input type="text" name="adresse" value="<?php echo $r[2] ?>"><br />
+                Usage: <input type="text" name="usage" value="<?php echo $r[3] ?>"><br />
+                Description: <input type="text" name="description" value="<?php echo $r[4] ?>"><br />
+                Capacite: <input type="text" name="capacite" value="<?php echo $r[5] ?>"><br />
+                <input type="submit" value="Submit">
+            </form>        
     </div>
 </body>
 </html>
