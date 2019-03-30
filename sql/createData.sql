@@ -45,3 +45,10 @@ INSERT INTO DrugPathologyConflict VALUES (DEFAULT, 'MCPEG5 Wild Gene', 4);
 INSERT INTO DrugPathologyConflict VALUES (DEFAULT, 'ARVT', 2);
 
 INSERT INTO DrugScript VALUES (DEFAULT, 1, 1, 1, '2016-01-01', 30);
+
+-----
+INSERT INTO Employee VALUES (DEFAULT, 'Villeneuve', 'Myriam', 'OTTAWA', 'MONTREAL', '1234567890');
+INSERT INTO Employee VALUES (DEFAULT, 'MonNom', 'MonPrenom', '1234 rue Université', '900-A Ladouceur', '8139240559');
+INSERT INTO Employee VALUES (DEFAULT, 'LeDoyen', 'Monsieur', '4434 Soleil', '578 Vanier', '9009009090');
+INSERT INTO Employee VALUES (DEFAULT, 'Nom1', 'Prenom1', 'AdresseP1', 'AdresseV1', '0000000000');
+

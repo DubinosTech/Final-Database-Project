@@ -90,3 +90,30 @@ CREATE TABLE PatientPathology (
     patient INTEGER REFERENCES Patient NOT NULL,
     pathology INTEGER REFERENCES Pathology NOT NULL
 );
+
+----------------
+
+   
+CREATE TABLE Employee(
+             eId SERIAL PRIMARY KEY,
+             pnomDeFamille CHAR(30),
+             pprenom CHAR(30),
+             pAdressePermanente CHAR(30),
+             pAdresseVillage CHAR(30),
+             telephone CHAR(30));
+             
+CREATE TABLE Epreuve(
+			 id SERIAL PRIMARY KEY,
+             nomEpreuve CHAR(30),
+             nomDiscipline CHAR(30),
+             iNom CHAR(30),
+             PRIMARY KEY (id),
+             FOREIGN KEY (iNom) REFERENCES Installation(iNom));
+             
+
+CREATE TABLE Situee(nomEpreuve CHAR(30),
+             iId INTEGER,
+             PRIMARY KEY(nomEpreuve, iId),
+             FOREIGN KEY(nomEpreuve) REFERENCES Epreuve,
+             FOREIGN KEY(iId) REFERENCES Installation);
+

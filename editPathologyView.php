@@ -3,11 +3,11 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.Pathology where id = $1";
+    $sql = "select * from pharmacy.Employee where eId = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
-        setFlash("This isn't the pathology you're looking for.");
+        setFlash("This isn't the employee you're looking for.");
         header("Location: pathology.php");
         exit;
     }
@@ -31,7 +31,7 @@
             $r = pg_fetch_row($ret);
 
             ?><form action="doEditPathology.php" method="POST">
-                <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
+                <input type="hidden" name="eId" value="<?php echo $r[0] ?>"><br />
                 Nom: <input type="text" name="pnomDeFamille" value="<?php echo $r[1] ?>"><br />
                 Prénom: <input type="text" name="pprenom" value="<?php echo $r[2] ?>"><br />
                 Adresse permanente: <input type="text" name="pAdressePermanente" value="<?php echo $r[3] ?>"><br />
