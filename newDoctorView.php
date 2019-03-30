@@ -13,16 +13,17 @@
     <div class="wrapper">
         <header>
             <h1>Pharmabase</h1>
-            <?php breadcrumb("New Doctor") ?>
+            <?php breadcrumb("New Athlete") ?>
         </header>
 
         <form action="doNewDoctor.php" method="POST">
-            First name: <input type="text" name="firstName"><br />
-            Last name: <input type="text" name="lastName"><br />
-            Address: <input type="text" name="address"><br />
-            Tel: <input type="text" name="tel"><br />
-            Specialty: <input type="text" name="specialty"><br />
-            Secretary: <?php secretarySelect(); ?>
+            Prenom: <input type="text" name="pprenom"><br />
+            Nom: <input type="text" name="pnomDeFamille"><br />
+            Adresse Permanante: <input type="text" name="pAdressePermanente"><br />
+            Adresse Village: <input type="text" name="pAdresseVillage"><br />
+            Pays: <input type="text" name="aPays"><br />
+            Medaille: <input type="text" name="aMedaille"><br />
+            Officiel: <?php secretarySelect(); ?>
             <input type="submit" value="Submit">
         </form>
 

@@ -21,6 +21,26 @@ CREATE TABLE Doctor (
     secretary INTEGER REFERENCES Secretary ON DELETE SET NULL
 );
 
+CREATE TABLE Officiel(
+    id SERIAL PRIMARY KEY,
+    pprenom VARCHAR(255) NOT NULL,
+    pnomDeFamille VARCHAR(255) NOT NULL,
+    pAdressePermanente VARCHAR(255) NOT NULL,
+    pAdresseVillage VARCHAR(255) NOT NULL,
+    otype VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE Athlete(
+    id SERIAL PRIMARY KEY,
+    pprenom VARCHAR(255) NOT NULL,
+    pnomDeFamille VARCHAR(255) NOT NULL,
+    pAdressePermanente VARCHAR(255) NOT NULL,
+    pAdresseVillage VARCHAR(255) NOT NULL,
+    aPays VARCHAR(255) NOT NULL,
+    aMedaille VARCHAR(255) NOT NULL,
+    officiel INTEGER REFERENCES Officiel ON DELETE SET NULL
+);
+
 CREATE TABLE Patient (
     id SERIAL PRIMARY KEY,
     firstName VARCHAR(255) NOT NULL,
