@@ -107,7 +107,6 @@ CREATE TABLE Epreuve(
              nomEpreuve CHAR(30),
              nomDiscipline CHAR(30),
              iNom CHAR(30),
-             PRIMARY KEY (id),
              FOREIGN KEY (iNom) REFERENCES Installation(iNom));
              
 
