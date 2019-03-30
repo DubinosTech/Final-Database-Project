@@ -18,7 +18,7 @@
 
         <form action="doNewPathology.php" method="POST">
             Nom: <input type="text" name="pnomDeFamille"><br />
-            Prénom: <input type="text" name="pprénom"><br />
+            Prénom: <input type="text" name="pprenom"><br />
             Adresse permanente: <input type="text" name="pAdressePermanente"><br />
             Adresse olympique: <input type="text" name="pAdresseOlympique"><br />
             Téléphone: <input type="text" name="telephone"><br />

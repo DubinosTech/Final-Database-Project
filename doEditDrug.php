@@ -12,8 +12,7 @@ EOF;
     $ret = pg_query_params($db, $sql,
         [$_POST["nomEpreuve"],
         $_POST["nomDiscipline"],
-        $_POST["iNom"],
-        $_POST["heure..."]);
+        $_POST["iNom"]);
     closeDB();
 
     if (!$ret) {

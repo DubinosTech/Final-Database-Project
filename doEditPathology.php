@@ -11,7 +11,7 @@ EOF;
 
     $ret = pg_query_params($db, $sql,
         [$_POST["pnom"],
-        $_POST["pprénom"], $_POST["pnomDeFamille"],$_POST["pAdressePermanente"],$_POST["pAdresseVillage"],$_POST["telephone"]]);
+        $_POST["pprenom"], $_POST["pnomDeFamille"],$_POST["pAdressePermanente"],$_POST["pAdresseVillage"],$_POST["telephone"]]);
     closeDB();
 
     if (!$ret) {

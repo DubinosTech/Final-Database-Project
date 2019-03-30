@@ -35,7 +35,6 @@
                 Name: <input type="text" name="nomEpreuve" value="<?php echo $r[1] ?>"><br />
                 Discipline: <input type="text" name="nomDiscipline" value="<?php echo $r[2]; ?>"><br />
                 Installation: <input type="text" name="iNom" value="<?php echo $r[3] ?>"><br />
-                Heure: <input type="text" name="heure..." value="<?php echo $r[4] ?>"><br />
                 <input type="submit" value="Submit">
             </form> <?php
         ?>

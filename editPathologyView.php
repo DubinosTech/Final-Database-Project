@@ -33,7 +33,7 @@
             ?><form action="doEditPathology.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
                 Nom: <input type="text" name="pnomDeFamille" value="<?php echo $r[1] ?>"><br />
-                Prénom: <input type="text" name="pprénom" value="<?php echo $r[2] ?>"><br />
+                Prénom: <input type="text" name="pprenom" value="<?php echo $r[2] ?>"><br />
                 Adresse permanente: <input type="text" name="pAdressePermanente" value="<?php echo $r[3] ?>"><br />
                 Adresse olympique: <input type="text" name="pAdresseVillage" value="<?php echo $r[4] ?>"><br />
                 Téléphone: <input type="text" name="telephone" value="<?php echo $r[5] ?>"><br />

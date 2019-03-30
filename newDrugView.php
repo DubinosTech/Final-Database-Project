@@ -20,7 +20,6 @@
             Nom: <input type="text" name="nomEpreuve"><br />
             Discipline: <input type="text" name="nomDiscipline"><br />
             Installation: <input type="text" name="iNom"><br />
-            Heure: <input type="text" name="heure(nouvel attribut?)"><br />
             <input type="submit" value="Submit">
         </form>
 
