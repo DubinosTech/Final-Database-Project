@@ -3,11 +3,11 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.Doctor where id = $1";
+    $sql = "select * from cojoDatabase.Athlete where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
-        setFlash("This isn't the doctor you're looking for.");
+        setFlash("This isn't the athlete you're looking for.");
         header("Location: doctors.php");
         exit;
     }
@@ -17,14 +17,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Edit Doctor</title>
+    <title>COJO OLYMPIC GAMES PROJECT :: Modifier Athlete</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("Edit Doctor") ?>
+            <h1>COJO OLYMPIC GAMES PROJECT</h1>
+            <?php breadcrumb("Modifier Athlete") ?>
         </header>
 
         <?php
@@ -32,12 +32,13 @@
 
             ?><form action="doEditDoctor.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
-                First name: <input type="text" name="firstName" value="<?php echo $r[1] ?>"><br />
-                Last name: <input type="text" name="lastName" value="<?php echo $r[2] ?>"><br />
-                Address: <input type="text" name="address" value="<?php echo $r[3] ?>"><br />
-                Tel: <input type="text" name="tel" value="<?php echo $r[4] ?>"><br />
-                Specialty: <input type="text" name="specialty" value="<?php echo $r[5] ?>"><br />
-                Secretary: <?php secretarySelect($r[6]); ?>
+                Prenom: <input type="text" name="pprenom" value="<?php echo $r[1] ?>"><br />
+                Nom: <input type="text" name="pnomDeFamille" value="<?php echo $r[2] ?>"><br />
+                Adresse Permanante: <input type="text" name="pAdressePermanente" value="<?php echo $r[3] ?>"><br />
+                Adresse Village: <input type="text" name="pAdresseVillage" value="<?php echo $r[4] ?>"><br />
+                Pays: <input type="text" name="aPays" value="<?php echo $r[5] ?>"><br />
+                Medaille: <input type="text" name="aMedaille" value="<?php echo $r[6] ?>"><br />
+                Superviseur: <?php secretarySelect($r[7]); ?>
                 <input type="submit" value="Submit">
             </form> <?php
         ?>

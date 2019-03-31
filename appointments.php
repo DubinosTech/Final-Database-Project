@@ -24,14 +24,7 @@
 
         <?php
             connectDB();
-           // $sql = <<<EOF
-        /*select a.id, a.date, a.endDate, p.firstName || ' '  || p.lastName, 
-                d.firstName || ' ' || d.lastName
-            from pharmacy.Service_Transport a
-            join pharmacy.Patient p on a.patient = p.id
-            join pharmacy.Doctor d on a.doctor = d.id;
-EOF;*/
-            $sql = "select * from pharmacy.ServiceTransport order by id;";
+            $sql = "select * from cojoDatabase.ServiceTransport order by id;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);

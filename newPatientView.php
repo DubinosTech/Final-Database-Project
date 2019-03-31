@@ -6,6 +6,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>COJO :: Nouvelle residence</title>
     <style>
         body {
@@ -18,6 +19,7 @@
         <header>
             <h1>COJO</h1>
             <?php breadcrumb("Nouvelle residence") ?>
+
         </header>
 
         <form action="doNewPatient.php" method="POST">

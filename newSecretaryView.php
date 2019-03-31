@@ -6,21 +6,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: New Secretary</title>
+    <title>COJO OLYMPIC GAMES PROJECT  :: Officiels </title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
-            <?php breadcrumb("New Secretary") ?>
+            <h1>COJO OLYMPIC GAMES PROJECT</h1>
+            <?php breadcrumb("Ajouter un officiel") ?>
         </header>
 
         <form action="doNewSecretary.php" method="POST">
-            First name: <input type="text" name="firstName"><br />
-            Last name: <input type="text" name="lastName"><br />
-            Address: <input type="text" name="address"><br />
-            Tel: <input type="text" name="tel"><br />
+            Prenom: <input type="text" name="pprenom"><br />
+            Nom: <input type="text" name="pnomDeFamille"><br />
+            Adresse Permanante: <input type="text" name="pAdressePermanente"><br />
+            Adresse Village: <input type="text" name="pAdresseVillage"><br />
+            Type: <input type="text" name="otype"><br />
             <input type="submit" value="Submit">
         </form>
 

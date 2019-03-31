@@ -3,7 +3,9 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.ServiceTransport where id = $1";
+
+    $sql = "select * from cojoDatabase.ServiceTransport where id = $1";
+
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
@@ -17,14 +19,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>COJO :: Modifier un transport</title>
+
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
+
             <h1>COJO</h1>
             <?php breadcrumb("Modifier un transport") ?>
+
         </header>
 
         <?php  $r = pg_fetch_row($ret); ?>

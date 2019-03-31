@@ -6,11 +6,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
     <title>COJO :: Reservation de transport</title>
     <style>
         body {
             background-image: url("r/trajet.jpg");
         } </style>
+
     <?php include "inc/resources.php" ?>
 </head>
 <body>
@@ -18,6 +20,7 @@
         <header>
             <h1>COJO</h1>
             <?php breadcrumb("Reservation de transport") ?>
+
         </header>
 
         <form action="doNewAppointment.php" method="POST">

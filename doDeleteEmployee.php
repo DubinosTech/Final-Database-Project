@@ -2,7 +2,8 @@
     include_once "inc/prelude.php";
 
     connectDB();
-    $sql = "delete from cojoDatabase.Residence where id = $1;";
+
+    $sql = "delete from cojoDatabase.Employee where eId = $1;";
 
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
@@ -10,5 +11,5 @@
     if (!$ret) {
         setFlash(pg_last_error($db));
     }
-    header("Location: patients.php");
+    header("Location: employees.php");
 ?>

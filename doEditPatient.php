@@ -4,9 +4,9 @@
     connectDB();
 
     $sql = <<<EOF
-        update pharmacy.Residence
+        update cojoDatabase.Residence
         set nom_Residence=$1, capacite_Residence=$2, adresse_Residence= $3, telephone_Residence=$4 where id = $5;
-EOF;
+    EOF;
 
     $ret = pg_query_params($db, $sql, [$_POST["nom_Residence"],
         $_POST["capacite_Residence"],

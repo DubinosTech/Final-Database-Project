@@ -2,8 +2,8 @@
     include_once "inc/prelude.php";
 
     connectDB();
+    $sql = "select * from cojoDatabase.Residence where id = $1";
 
-    $sql = "select * from pharmacy.Residence where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
@@ -18,6 +18,7 @@
 <head>
     <meta charset="UTF-8">
     <title>COJO :: Modifier Residence</title>
+
     <?php include "inc/resources.php" ?>
 </head>
 <body>
@@ -25,6 +26,7 @@
         <header>
             <h1>COJO</h1>
             <?php breadcrumb("Modifier Residence") ?>
+
         </header>
 
         <?php
