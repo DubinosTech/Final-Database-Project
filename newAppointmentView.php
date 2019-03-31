@@ -6,13 +6,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: New Appointment</title>
+    <title>COJO PROJECT :: New Appointment</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
+            <h1>COJO PROJECT</h1>
             <?php breadcrumb("New Appointment") ?>
         </header>
 

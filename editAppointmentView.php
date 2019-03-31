@@ -17,13 +17,13 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Pharmabase :: Edit Appointment</title>
+    <title>COJO PROJECT :: Edit Appointment</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
-            <h1>Pharmabase</h1>
+            <h1>COJO PROJECT</h1>
             <?php breadcrumb("Edit Appointment") ?>
         </header>
 

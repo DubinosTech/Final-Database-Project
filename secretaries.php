@@ -22,7 +22,7 @@
         
         <a href="newSecretaryView.php" class="new">New</a>
         
-        <h2>--------Superviseur des Athletes------</h1>
+        <h2>--------Superviseur des Athletes------</h2>
         <?php
             connectDB();
             $sql = <<<EOF
