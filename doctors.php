@@ -28,8 +28,8 @@
             connectDB();
             $sql = <<<EOF
             select d.id, d.pprenom, d.pnomDeFamille, d.pAdressePermanente, d.pAdresseVillage, d.aPays, d.aMedaille,s.name
-            from pharmacy.Athlete d join
-            (select id, id || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Officiel) s
+            from cojoDatabase.Athlete d join
+            (select id, id || ': ' || pprenom || ' ' || pnomDeFamille as name from cojoDatabase.Officiel) s
             on d.officiel = s.id;
 EOF;
             $ret = pg_query($db, $sql);

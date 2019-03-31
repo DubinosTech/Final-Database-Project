@@ -4,7 +4,7 @@
     connectDB();
 
     $sql = <<<EOF
-        update pharmacy.ProcScript
+        update cojoDatabase.ProcScript
         set procName=$1, doctor=$2, patient=$3, date=$4
         where id = $5;
 EOF;

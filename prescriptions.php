@@ -28,7 +28,7 @@
             connectDB();
             $sql = <<<EOF
                 select I.id, I.iNom, I.adresse, I.usage, I.description, I.capacite
-                from pharmacy.Installation I
+                from cojoDatabase.Installation I
 EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {

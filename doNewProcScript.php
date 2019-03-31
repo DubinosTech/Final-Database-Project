@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "insert into pharmacy.ProcScript (procName, doctor, patient, date) values ($1, $2, $3, $4)";
+    $sql = "insert into cojoDatabase.ProcScript (procName, doctor, patient, date) values ($1, $2, $3, $4)";
     $ret = pg_query_params($db, $sql,
         [$_POST["procName"],
         $_POST["doctor"],

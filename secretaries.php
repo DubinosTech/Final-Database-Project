@@ -27,8 +27,8 @@
             connectDB();
             $sql = <<<EOF
             (select s.id, s.pprenom, s.pnomDeFamille, s.pAdressePermanente, s.pAdresseVillage, s.otype, p.name
-            From  pharmacy.Officiel s
-            join (select id, officiel, id || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Athlete) p
+            From  cojoDatabase.Officiel s
+            join (select id, officiel, id || ': ' || pprenom || ' ' || pnomDeFamille as name from cojoDatabase.Athlete) p
             on p.officiel=s.id
             order by s.id)  				
 EOF;
@@ -60,7 +60,7 @@ EOF;
         <?php
             connectDB();
             $sql = <<<EOF
-                select * from pharmacy.Officiel;
+                select * from cojoDatabase.Officiel;
 EOF;
             $ret = pg_query($db, $sql);
             closeDB();

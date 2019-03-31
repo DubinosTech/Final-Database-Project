@@ -30,7 +30,7 @@
             connectDB();
             $sql = <<<EOF
                 select S.id, S.snom, S.sdescription, S.sadresse, S.stelephone
-                from pharmacy.ServiceMedical S
+                from cojoDatabase.ServiceMedical S
 EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {

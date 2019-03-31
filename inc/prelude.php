@@ -10,7 +10,7 @@ $db = null;
 
 function connectDB() {
     global $db;
-    $db = pg_connect("host=localhost port=5432 dbname=pharmacy user=postgres password=admin");
+    $db = pg_connect("host=localhost port=5432 dbname=cojoDatabase user=postgres password=admin");
     if (!$db) {
         echo "Error : Unable to open database\n";
     }
@@ -50,7 +50,7 @@ function getBoolParam($param) {
 function secretarySelect($id = -1) {
     echo "<select name='officiel'>";
     connectDB();
-    $ret = pg_query("select id, id::text || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Officiel order by id;");
+    $ret = pg_query("select id, id::text || ': ' || pprenom || ' ' || pnomDeFamille as name from cojoDatabase.Officiel order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -66,7 +66,7 @@ function secretarySelect($id = -1) {
 function athleteselect($id = -1){
     echo "<select name='athlete'>";
     connectDB();
-    $ret = pg_query("select id, id::text || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Athlete order by id;");
+    $ret = pg_query("select id, id::text || ': ' || pprenom || ' ' || pnomDeFamille as name from cojoDatabase.Athlete order by id;");
     closeDB();
     
     while ($row = pg_fetch_row($ret)) {
@@ -83,7 +83,7 @@ function athleteselect($id = -1){
 function doctorSelect($id = -1) {
     echo "<select name='athlete'>";
     connectDB();
-    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Athlete order by id;");
+    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from cojoDatabase.Athlete order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -99,7 +99,7 @@ function doctorSelect($id = -1) {
 function patientSelect($id = -1) {
     echo "<select name='patient'>";
     connectDB();
-    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from pharmacy.Patient order by id;");
+    $ret = pg_query("select id, id::text || ': ' || firstName || ' ' || lastName as name from cojoDatabase.Patient order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -128,7 +128,7 @@ function sexSelect($sex = 'M') {
 function substanceSelect($name="substance", $sub = "") {
     echo "<select name='$name'>";
     connectDB();
-    $ret = pg_query("select distinct substance from pharmacy.Drug order by substance;");
+    $ret = pg_query("select distinct substance from cojoDatabase.Drug order by substance;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -144,7 +144,7 @@ function substanceSelect($name="substance", $sub = "") {
 function pathologySelect($id = -1) {
     echo "<select name='pathology'>";
     connectDB();
-    $ret = pg_query("select id, name from pharmacy.Pathology order by name;");
+    $ret = pg_query("select id, name from cojoDatabase.Pathology order by name;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -160,7 +160,7 @@ function pathologySelect($id = -1) {
 function drugSelect($id = -1) {
     echo "<select name='drug'>";
     connectDB();
-    $ret = pg_query("select id, name from pharmacy.Drug order by name;");
+    $ret = pg_query("select id, name from cojoDatabase.Drug order by name;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {
@@ -176,7 +176,7 @@ function drugSelect($id = -1) {
 function installationSelect($id = -1) {
     echo "<select name='installation'>";
     connectDB();
-    $ret = pg_query("select id, iNom from pharmacy.Installation order by id;");
+    $ret = pg_query("select id, iNom from cojoDatabase.Installation order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {

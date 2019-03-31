@@ -4,7 +4,7 @@
     connectDB();
 
     $sql = <<<EOF
-        update pharmacy.Appointment
+        update cojoDatabase.Appointment
         set date=$1, endDate=$2, remarks=$3, patient=$4, doctor=$5
         where id = $6;
 EOF;

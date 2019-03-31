@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "insert into pharmacy.ServiceMedical (snom, sdescription, sadresse, stelephone) values ($1, $2, $3, $4)";
+    $sql = "insert into cojoDatabase.ServiceMedical (snom, sdescription, sadresse, stelephone) values ($1, $2, $3, $4)";
     $ret = pg_query_params($db, $sql,
         [$_POST["snom"],
         $_POST["sdescription"],

@@ -4,7 +4,7 @@
     connectDB();
 
     $sql = <<<EOF
-        update pharmacy.DrugPathologyConflict
+        update cojoDatabase.DrugPathologyConflict
         set substance=$1, pathology=$2
         where id = $3;
 EOF;

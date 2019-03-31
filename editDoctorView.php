@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.Athlete where id = $1";
+    $sql = "select * from cojoDatabase.Athlete where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {

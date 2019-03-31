@@ -27,9 +27,9 @@
             $sql = <<<EOF
             select a.id, a.date, a.endDate, p.firstName || ' '  || p.lastName, 
                 d.firstName || ' ' || d.lastName
-            from pharmacy.Appointment a
-            join pharmacy.Patient p on a.patient = p.id
-            join pharmacy.Doctor d on a.doctor = d.id;
+            from cojoDatabase.Appointment a
+            join cojoDatabase.Patient p on a.patient = p.id
+            join cojoDatabase.Doctor d on a.doctor = d.id;
 EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {

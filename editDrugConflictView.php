@@ -3,7 +3,7 @@ include_once "inc/prelude.php";
 
 connectDB();
 
-$sql = "select * from pharmacy.ServiceMedical where id = $1";
+$sql = "select * from cojoDatabase.ServiceMedical where id = $1";
 $ret = pg_query_params($db, $sql, [$_GET["id"]]);
 closeDB();
 if (!$ret) {

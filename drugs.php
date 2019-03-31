@@ -22,8 +22,8 @@
             connectDB();
             $sql = <<<EOF
             select e.id, e.nomEpreuve, e.nomDiscipline,i.name
-            from pharmacy.Epreuve e join
-            (select id, id || ': ' || iNom as name from pharmacy.Installation) i
+            from cojoDatabase.Epreuve e join
+            (select id, id || ': ' || iNom as name from cojoDatabase.Installation) i
             on e.installation = i.id;
 
 EOF;
