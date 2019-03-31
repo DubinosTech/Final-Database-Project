@@ -11,5 +11,5 @@
     if (!$ret) {
         setFlash(pg_last_error($db));
     }
-    header("Location: drugs.php");
+    header("Location: epreuves.php");
 ?>

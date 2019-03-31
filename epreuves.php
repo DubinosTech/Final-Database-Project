@@ -6,36 +6,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO :: Employés</title>
+    <title>COJO :: Épreuves</title>
+    <style>
+        body {
+            background-image: url(" r/epreuve.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO</h1>
-            <?php breadcrumb("Employés") ?>
+            <?php breadcrumb("Épreuves") ?>
         </header>
 
-        <a href="newPathologyView.php" class="new">New</a>
+        <a href="newEpreuveView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Employee;";
+            $sql = <<<EOF
+            select e.id, e.nomEpreuve, e.nomDiscipline,i.name
+            from pharmacy.Epreuve e join
+            (select id, id || ': ' || iNom as name from pharmacy.Installation) i
+            on e.installation = i.id;
+
+EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Nom", "Prénom","Adresse permanente","Adresse olympique","Téléphone"]);
+                datatable(["ID", "Nom", "Discipline", "Installation"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 6; $i++) {
+                    for ($i = 0; $i < 4; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Pathology", $row[0]);
-                    deleteCell("Pathology", $row[0]);
+                    editCell("Epreuve", $row[0]);
+                    deleteCell("Epreuve", $row[0]);
 
                     echo "</tr>";
                 }

@@ -8,7 +8,7 @@
     closeDB();
     if (!$ret) {
         setFlash("This isn't the Epreuve you're looking for.");
-        header("Location: drug.php");
+        header("Location: epreuves.php");
         exit;
     }
 ?>
@@ -18,6 +18,10 @@
 <head>
     <meta charset="UTF-8">
     <title>COJO :: Modifier Épreuve</title>
+    <style>
+        body {
+            background-image: url(" r/epreuve.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
@@ -30,7 +34,7 @@
         <?php
             $r = pg_fetch_row($ret);
 
-            ?><form action="doEditDrug.php" method="POST">
+            ?><form action="doEditEpreuve.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
                 Name: <input type="text" name="nomEpreuve" value="<?php echo $r[1] ?>"><br />
                 Discipline: <input type="text" name="nomDiscipline" value="<?php echo $r[2]; ?>"><br />
