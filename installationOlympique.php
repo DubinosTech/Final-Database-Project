@@ -9,7 +9,7 @@
     <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Installation Olympique</title>
     <style>
         body {
-            background-image: url(" r/olympic1.jpg");
+            background-image: url(" r/olympic3.jpg");
         } </style>
     <?php include "inc/resources.php" ?>
 </head>
