@@ -3,12 +3,12 @@ include_once "inc/prelude.php";
 
 connectDB();
 
-$sql = "select * from pharmacy.ServiceMedical where id = $1";
+$sql = "select * from cojoDatabase.ServiceMedical where id = $1";
 $ret = pg_query_params($db, $sql, [$_GET["id"]]);
 closeDB();
 if (!$ret) {
     setFlash("This isn't the Medicale Service that you're looking for.");
-    header("Location: conflicts.php");
+    header("Location: ServiceMedical.php");
     exit;
 }
 ?>
@@ -17,7 +17,7 @@ if (!$ret) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO Project :: Edit ---   Service Medicale</title>
+    <title>COJO Project :: Edit -- Service Medicale</title>
     <style>
         body {
             background-image: url(" r/olympic1.jpg");
@@ -32,7 +32,7 @@ if (!$ret) {
         </header>
 
         <?php  $r = pg_fetch_row($ret); ?>
-        <form action="doEditDrugConflict.php" method="POST">
+        <form action="doEditServiceMedical.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
             Nom: <input type="text" name="snom" value="<?php echo $r[1] ?>"><br />
             Description: <input type="text" name="sdescription" value="<?php echo $r[2] ?>"><br />

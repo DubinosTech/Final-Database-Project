@@ -2,10 +2,10 @@
     include_once "inc/prelude.php";
 
     connectDB();
-    #    $sql = "insert into pharmacy.Employee (pnomDeFamille, pprenom,pAdressePermanente,pAdresseVillage,telephone) values ($1,$2,$3,$4,$5)";
+    #    $sql = "insert into cojoDatabase.Employee (pnomDeFamille, pprenom,pAdressePermanente,pAdresseVillage,telephone) values ($1,$2,$3,$4,$5)";
     
     $sql = <<<EOF
-        update pharmacy.Employee
+        update cojoDatabase.Employee
         set pnomDeFamille=$1, pprenom=$2, pAdressePermanente=$3, pAdresseVillage=$4, telephone=$5
         where eId = $6;
 EOF;

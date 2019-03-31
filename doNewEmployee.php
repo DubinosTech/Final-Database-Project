@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "insert into pharmacy.Employee (pnomDeFamille, pprenom,pAdressePermanente,pAdresseVillage,telephone) values ($1,$2,$3,$4,$5)";
+    $sql = "insert into cojoDatabase.Employee (pnomDeFamille, pprenom,pAdressePermanente,pAdresseVillage,telephone) values ($1,$2,$3,$4,$5)";
     $ret = pg_query_params($db, $sql,[$_POST["pnomDeFamille"],$_POST["pprenom"],$_POST["pAdressePermanente"],$_POST["pAdresseVillage"],$_POST["telephone"]]);
     closeDB();
 

@@ -20,7 +20,7 @@
             <?php breadcrumb("Service Medicale") ?>
         </header>
 
-        <form action="doNewDrugConflict.php" method="POST">
+        <form action="doNewServiceMedical.php" method="POST">
             Nom: <input type="text" name="snom"><br />
             Description: <input type="text" name="sdescription"><br />
             Adresse: <input type="text" name="sadresse"><br />

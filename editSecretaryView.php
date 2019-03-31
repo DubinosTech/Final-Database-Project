@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.Officiel where id = $1";
+    $sql = "select * from cojoDatabase.Officiel where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
@@ -37,6 +37,7 @@
                 Adresse Permanante: <input type="text" name="pAdressePermanente" value="<?php echo $r[3] ?>"><br />
                 Adresse Village: <input type="text" name="pAdresseVillage" value="<?php echo $r[4] ?>"><br />
                 Type: <input type="text" name="otype" value="<?php echo $r[5] ?>"><br />
+                Athlete: <?php athleteselect(); ?>
                 <input type="submit" value="Submit">
             </form> <?php
         ?>

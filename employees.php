@@ -24,7 +24,7 @@
 
         <?php
             connectDB();
-            $sql = "select * from pharmacy.Employee;";
+            $sql = "select * from cojoDatabase.Employee;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);

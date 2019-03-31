@@ -3,7 +3,7 @@
 
     connectDB();
     $sql = <<<EOF
-        update pharmacy.Athlete
+        update cojoDatabase.Athlete
         set pprenom=$1, pnomDeFamille=$2,pAdressePermanente=$3, pAdresseVillage=$4, aPays=$5, aMedaille=$6, officiel=$7
         where id = $8;
 EOF;

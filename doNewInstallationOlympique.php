@@ -2,26 +2,20 @@
     include_once "inc/prelude.php";
 
     connectDB();
-
-    $sql = <<<EOF
-        update pharmacy.Installation
-        set iNom=$1, adresse=$2, usage=$3, description=$4, capacite=$5
-        where id = $6;
-EOF;
-
+    #I.iId, I.iNom, I.adresse, I.usage, I.description, I.capacite
+    $sql = "insert into cojoDatabase.Installation (iNom, adresse, usage, description, capacite) values ($1, $2, $3, $4, $5)";
     $ret = pg_query_params($db, $sql,
         [$_POST["iNom"],
         $_POST["adresse"],
         $_POST["usage"],
         $_POST["description"],
-        $_POST["capacite"],
-        $_POST["id"]]);
+        $_POST["capacite"]]);
     closeDB();
 
     if (!$ret) {
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: prescriptions.php");
+        header("Location: installationOlympique.php");
     }
 ?>

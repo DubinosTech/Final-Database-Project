@@ -1,7 +1,7 @@
-DROP SCHEMA IF EXISTS Pharmacy CASCADE;
-CREATE SCHEMA Pharmacy;
+DROP SCHEMA IF EXISTS cojoDatabase CASCADE;
+CREATE SCHEMA cojoDatabase;
 
-SET search_path = Pharmacy;
+SET search_path = cojoDatabase;
 
 CREATE TABLE Secretary (
     id SERIAL PRIMARY KEY,

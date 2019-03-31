@@ -1,4 +1,4 @@
-SET search_path = Pharmacy;
+SET search_path = cojoDatabase;
 
 INSERT INTO Secretary VALUES (DEFAULT, 'BB', '8', 'Desert, Jakku', '444-444-4444'); -- 1
 INSERT INTO Secretary VALUES (DEFAULT, 'C', '3PO', 'Tatooine', '222-222-2222'); -- 2
