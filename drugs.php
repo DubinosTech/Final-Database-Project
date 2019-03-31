@@ -21,10 +21,11 @@
         <?php
             connectDB();
             $sql = <<<EOF
-            select d.id, d.name, d.price, d.substance, d.generic, s.name
-            from pharmacy.Drug d join
-            (select id, id || ': ' || drug || ' ' || doctor as name from pharmacy.DrugScript) s
-            on d.id = s.id;
+            select e.id, e.nomEpreuve, e.nomDiscipline,i.name
+            from pharmacy.Epreuve e join
+            (select id, id || ': ' || iNom as name from pharmacy.Installation) i
+            on e.installation = i.id;
+
 EOF;
             $ret = pg_query($db, $sql);
             if(!$ret) {

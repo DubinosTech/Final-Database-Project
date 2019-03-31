@@ -3,11 +3,11 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.Drug where id = $1";
+    $sql = "select * from pharmacy.Epreuve where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
-        setFlash("This isn't the drug you're looking for.");
+        setFlash("This isn't the Epreuve you're looking for.");
         header("Location: drug.php");
         exit;
     }
@@ -34,7 +34,7 @@
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
                 Name: <input type="text" name="nomEpreuve" value="<?php echo $r[1] ?>"><br />
                 Discipline: <input type="text" name="nomDiscipline" value="<?php echo $r[2]; ?>"><br />
-                Installation: <input type="text" name="iNom" value="<?php echo $r[3] ?>"><br />
+                Installation: <?php installationSelect($r[3]); ?>
                 <input type="submit" value="Submit">
             </form> <?php
         ?>
