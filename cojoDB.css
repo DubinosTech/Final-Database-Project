@@ -26,7 +26,7 @@ header {
 
 header h1 {
     display: inline;
-    margin-right: 40px;
+    margin-right: 220px;
 }
 
 h1 {
@@ -34,9 +34,19 @@ h1 {
     font: italic 700 24px "Raleway";
 }
 
+h2 {
+    color: #222;
+    font: 450 24px "Raleway";
+}
+
 .home h1 {
     color: white;
     font: italic 700 48px "Raleway";
+}
+
+.home h2 {
+    color: white;
+    font: 450 38px "Raleway";
 }
 
 .menu div {

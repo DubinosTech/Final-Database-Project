@@ -10,10 +10,11 @@
 <body class="home">
     <div class="wrapper">
         <header>
-            <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
+            <h1>***  COJO OLYMPIC GAMES PROJECT - CSI2532  ***</h1>
         </header>
 
         <div class="menu">
+            <div><a href="login.php">Login for employees</a></div>
             <div><a href="doctors.php">Athlètes</a></div>
             <div><a href="secretaries.php">Officiels</a></div>
             <div><a href="patients.php">Résidences</a></div>
