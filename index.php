@@ -5,7 +5,7 @@
 <head>
     <meta charset="UTF-8">
     <title>COJO OLYMPIC GAMES PROJECT - CSI2532</title>
-    <link rel="stylesheet" href="pharmabase.css">
+    <link rel="stylesheet" href="cojoDatabase.css">
 </head>
 <body class="home">
     <div class="wrapper">
