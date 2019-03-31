@@ -84,7 +84,6 @@ EOF;
                 
                 endDatatable();
             }
-            closeDB();
         ?>
     </div>
 </body>
