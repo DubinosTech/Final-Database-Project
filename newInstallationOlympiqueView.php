@@ -20,7 +20,7 @@
             <?php breadcrumb("COJO OLYMPIC GAMES") ?>
         </header>
 
-		<form action="doNewDrugScript.php" method="POST">
+		<form action="doNewInstallationOlympique.php" method="POST">
             Nom: <input type="text" name="iNom"><br />
             Adresse: <input type="text" name="adresse"><br />
             Usage: <input type="text" name="usage"><br />

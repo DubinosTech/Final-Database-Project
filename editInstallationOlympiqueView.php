@@ -8,7 +8,7 @@
     closeDB();
     if (!$ret) {
         setFlash("This isn't the installation Olympique script you're looking for.");
-        header("Location: prescriptions.php");
+        header("Location: installationOlympique.php");
         exit;
     }
 ?>
@@ -31,7 +31,7 @@
             <?php breadcrumb("Edit Installation Olympique") ?>
         </header>
         <?php  $r = pg_fetch_row($ret); ?>
-        <form action="doEditDrugScript.php" method="POST">
+        <form action="doEditInstallationOlympique.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
                 Nom: <input type="text" name="iNom" value="<?php echo $r[1] ?>"><br />
                 Adresse: <input type="text" name="adresse" value="<?php echo $r[2] ?>"><br />

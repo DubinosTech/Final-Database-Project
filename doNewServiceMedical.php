@@ -16,6 +16,6 @@
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: conflicts.php");
+        header("Location: ServiceMedical.php");
     }
 ?>

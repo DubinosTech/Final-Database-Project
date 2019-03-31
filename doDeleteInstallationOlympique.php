@@ -3,13 +3,12 @@
 
     connectDB();
 
-    $sql = "delete from cojoDatabase.ServiceMedical where id = $1;";
+    $sql = "delete from cojoDatabase.Installation where id = $1;";
 
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
-
     if (!$ret) {
         setFlash(pg_last_error($db));
     }
-    header("Location: conflicts.php");
+    header("Location: installationOlympique.php");
 ?>
