@@ -11,6 +11,6 @@
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: pathologies.php");
+        header("Location: employees.php");
     }
 ?>

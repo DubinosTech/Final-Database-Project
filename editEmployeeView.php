@@ -8,7 +8,7 @@
     closeDB();
     if (!$ret) {
         setFlash("This isn't the employee you're looking for.");
-        header("Location: pathology.php");
+        header("Location: employees.php");
         exit;
     }
 ?>
@@ -18,6 +18,10 @@
 <head>
     <meta charset="UTF-8">
     <title>COJO :: Modifier Employé</title>
+    <style>
+        body {
+            background-image: url(" r/employes.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
@@ -30,7 +34,7 @@
         <?php
             $r = pg_fetch_row($ret);
 
-            ?><form action="doEditPathology.php" method="POST">
+            ?><form action="doEditEmployee.php" method="POST">
                 <input type="hidden" name="eId" value="<?php echo $r[0] ?>"><br />
                 Nom: <input type="text" name="pnomDeFamille" value="<?php echo $r[1] ?>"><br />
                 Prénom: <input type="text" name="pprenom" value="<?php echo $r[2] ?>"><br />
