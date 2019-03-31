@@ -56,7 +56,7 @@ EOF;
             }
         ?>
         
-        <h3>--------------Listes DES Officiels----------------</h2>
+        <h2>--------------Listes DES Officiels----------------</h2>
         <?php
             connectDB();
             $sql = <<<EOF
