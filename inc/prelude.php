@@ -63,6 +63,23 @@ function secretarySelect($id = -1) {
     echo "</select>";
 }
 
+function athleteselect($id = -1){
+    echo "<select name='athlete'>";
+    connectDB();
+    $ret = pg_query("select id, id::text || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Athlete order by id;");
+    closeDB();
+    
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
+    }
+    echo "</select>";
+    
+}
+
 function doctorSelect($id = -1) {
     echo "<select name='athlete'>";
     connectDB();

@@ -17,7 +17,7 @@ if (!$ret) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO Project :: Edit ---   Service Medicale</title>
+    <title>COJO Project :: Edit -- Service Medicale</title>
     <style>
         body {
             background-image: url(" r/olympic1.jpg");
