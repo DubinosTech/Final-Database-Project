@@ -10,7 +10,7 @@ $db = null;
 
 function connectDB() {
     global $db;
-    $db = pg_connect("host=localhost port=5433 dbname=pharmacy user=postgres password=master10");
+    $db = pg_connect("host=localhost port=5432 dbname=pharmacy user=postgres password=admin");
     if (!$db) {
         echo "Error : Unable to open database\n";
     }
@@ -61,6 +61,23 @@ function secretarySelect($id = -1) {
         echo "<option value='$row[0]' $selected>$row[1]</option>";
     }
     echo "</select>";
+}
+
+function athleteselect($id = -1){
+    echo "<select name='athlete'>";
+    connectDB();
+    $ret = pg_query("select id, id::text || ': ' || pprenom || ' ' || pnomDeFamille as name from pharmacy.Athlete order by id;");
+    closeDB();
+    
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
+    }
+    echo "</select>";
+    
 }
 
 function doctorSelect($id = -1) {
@@ -144,6 +161,22 @@ function drugSelect($id = -1) {
     echo "<select name='drug'>";
     connectDB();
     $ret = pg_query("select id, name from pharmacy.Drug order by name;");
+    closeDB();
+
+    while ($row = pg_fetch_row($ret)) {
+        $selected = "";
+        if ($id == $row[0]) {
+            $selected = "selected";
+        }
+        echo "<option value='$row[0]' $selected>$row[1]</option>";
+    }
+    echo "</select>";
+}
+
+function installationSelect($id = -1) {
+    echo "<select name='installation'>";
+    connectDB();
+    $ret = pg_query("select id, iNom from pharmacy.Installation order by id;");
     closeDB();
 
     while ($row = pg_fetch_row($ret)) {

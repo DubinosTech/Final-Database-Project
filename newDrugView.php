@@ -6,23 +6,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO :: Nouvelle Épreuve</title>
+    <title>COJO :: Ajouter Épreuve</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO</h1>
-            <?php breadcrumb("Nouvelle Épreuve") ?>
+            <?php breadcrumb("Ajouter Épreuve") ?>
         </header>
 
         <form action="doNewDrug.php" method="POST">
-            Nom: <input type="text" name="nomEpreuve"><br />
+            Nom d'Epreuve: <input type="text" name="nomEpreuve"><br />
             Discipline: <input type="text" name="nomDiscipline"><br />
-            Installation: <input type="text" name="iNom"><br />
+            Installation: <?php installationSelect(); ?>
             <input type="submit" value="Submit">
         </form>
 
     </div>
 </body>
 </html>
+
+

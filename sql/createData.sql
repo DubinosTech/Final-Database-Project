@@ -66,3 +66,6 @@ INSERT INTO Employee VALUES (DEFAULT, 'MonNom', 'MonPrenom', '1234 rue Universit
 INSERT INTO Employee VALUES (DEFAULT, 'LeDoyen', 'Monsieur', '4434 Soleil', '578 Vanier', '9009009090');
 INSERT INTO Employee VALUES (DEFAULT, 'Nom1', 'Prenom1', 'AdresseP1', 'AdresseV1', '0000000000');
 
+
+INSERT INTO Epreuve VALUES (DEFAULT, '100 m', 'course', 1);
+INSERT INTO Epreuve VALUES (DEFAULT, 'papillon','nage',2);

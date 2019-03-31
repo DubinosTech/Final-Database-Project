@@ -3,11 +3,8 @@
 
     connectDB();
 
-    $sql = "insert into pharmacy.Drug (name, price, substance, generic) values ($1, $2, $3, $4)";
-    $ret = pg_query_params($db, $sql,
-        [$_POST["nomEpreuve "],
-        $_POST["nomDiscipline"],
-        $_POST["iNom"]);
+    $sql = "insert into pharmacy.Epreuve (nomEpreuve, nomDiscipline, installation) values ($1, $2, $3)";
+    $ret = pg_query_params($db, $sql, [$_POST["nomEpreuve"], $_POST["nomDiscipline"], $_POST["installation"]]);
     closeDB();
 
     if (!$ret) {

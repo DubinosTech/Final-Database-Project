@@ -27,7 +27,7 @@
         <?php
             connectDB();
             $sql = <<<EOF
-                select I.iId, I.iNom, I.adresse, I.usage, I.description, I.capacite
+                select I.id, I.iNom, I.adresse, I.usage, I.description, I.capacite
                 from pharmacy.Installation I
 EOF;
             $ret = pg_query($db, $sql);

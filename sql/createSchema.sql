@@ -113,7 +113,7 @@ CREATE TABLE PatientPathology (
 
 ---------- Nos Tables 
 CREATE TABLE Installation(
-	iId SERIAL PRIMARY KEY,
+	id SERIAL PRIMARY KEY,
 	iNom CHAR(30) NOT NULL,
 	adresse CHAR(30) NOT NULL,
 	usage CHAR(30) NOT NULL,
@@ -140,14 +140,4 @@ CREATE TABLE Epreuve(
 			 id SERIAL PRIMARY KEY,
              nomEpreuve CHAR(30),
              nomDiscipline CHAR(30),
-             iId INTEGER,
-             FOREIGN KEY (iId) REFERENCES Installation);
-             
-
-CREATE TABLE Situee(
-		     id SERIAL ,
-             iId SERIAL,
-             PRIMARY KEY(id, iId),
-             FOREIGN KEY(id) REFERENCES Epreuve,
-             FOREIGN KEY(iId) REFERENCES Installation);
-
+             installation INTEGER REFERENCES Installation ON DELETE SET NULL);

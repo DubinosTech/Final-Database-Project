@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "select * from pharmacy.Installation where iId = $1";
+    $sql = "select * from pharmacy.Installation where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
@@ -32,7 +32,7 @@
         </header>
         <?php  $r = pg_fetch_row($ret); ?>
         <form action="doEditDrugScript.php" method="POST">
-                <input type="hidden" name="iId" value="<?php echo $r[0] ?>"><br />
+                <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
                 Nom: <input type="text" name="iNom" value="<?php echo $r[1] ?>"><br />
                 Adresse: <input type="text" name="adresse" value="<?php echo $r[2] ?>"><br />
                 Usage: <input type="text" name="usage" value="<?php echo $r[3] ?>"><br />
