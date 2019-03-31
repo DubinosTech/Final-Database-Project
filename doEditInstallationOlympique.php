@@ -22,6 +22,6 @@ EOF;
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: prescriptions.php");
+        header("Location: installationOlympique.php");
     }
 ?>
