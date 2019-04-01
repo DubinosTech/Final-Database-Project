@@ -53,4 +53,4 @@ INSERT INTO ServiceTransport VALUES (DEFAULT, '3000-01-01 18:00', '3000-01-01 20
 
 INSERT INTO Users VALUES ('5000000', 'Mark', 'Sila', 'mark@mail.com', 'password');
 INSERT INTO Users VALUES ('5000001', 'Admin', 'Admin', 'admin@mail.com', 'admin');
-INSERT INTO Users VALUES ('5000001', 'Ramzy', 'Kanouche', 'ramzy@mail.com', 'password');
+INSERT INTO Users VALUES ('5000002', 'Ramzy', 'Kanouche', 'ramzy@mail.com', 'password');
