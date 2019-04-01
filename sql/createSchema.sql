@@ -133,6 +133,6 @@ CREATE TABLE ServiceTransport (
             depart TIMESTAMP NOT NULL,
             arrivee TIMESTAMP NOT NULL,
             itineraire TEXT,
-            freqHoraire INTEGER,
+            freqHoraire VARCHAR(255),
             CHECK (depart < arrivee)
 );
