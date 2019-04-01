@@ -132,7 +132,7 @@ CREATE TABLE ServiceTransport (
             id SERIAL PRIMARY KEY,
             depart TIMESTAMP NOT NULL,
             arrivee TIMESTAMP NOT NULL,
-            itineraire TEXT,
-            freqHoraire VARCHAR(255),
+            itineraire VARCHAR(255) NOT NULL,
+            freqHoraire VARCHAR(255) NOT NULL,
             CHECK (depart < arrivee)
 );

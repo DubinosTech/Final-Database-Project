@@ -34,14 +34,9 @@
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 3; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    echo "<td><a href='editAppointmentView.php?id=$row[0]'>Read</a></td>";
-                     for ($i = 3; $i < 5; $i++) {
-                        echo "<td>", $row[$i], "</td>";
-                    }
-
                     editCell("Appointment", $row[0]);
                     deleteCell("Appointment", $row[0]);
 
@@ -50,7 +45,6 @@
 
                 endDatatable();
             }
-            closeDB();
         ?>
     </div>
 </body>
