@@ -44,9 +44,11 @@ EOF;
                         echo "<td>", $row[$i], "</td>";
                     }
 
+                    if($_SESSION['loggedin'])
+                    {
                     editCell("Epreuve", $row[0]);
                     deleteCell("Epreuve", $row[0]);
-
+                    }
                     echo "</tr>";
                 }
 

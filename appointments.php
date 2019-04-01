@@ -47,10 +47,11 @@ EOF;
                      for ($i = 3; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-
+                    if($_SESSION['loggedin'])
+                    {
                     editCell("Appointment", $row[0]);
                     deleteCell("Appointment", $row[0]);
-
+                    }
                     echo "</tr>";
                 }
 
