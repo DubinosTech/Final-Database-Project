@@ -4,12 +4,20 @@ SET search_path = cojoDatabase;
 
 INSERT INTO Officiel VALUES (DEFAULT, 'Joseph','Morinho' , '7 Daly ave', '22 Laurier','Entraineur'); -- 1
 INSERT INTO Officiel VALUES (DEFAULT, 'Diego','Simeoni' , '3 summerset', '12 king Edward','Entraineur'); -- 2
+INSERT INTO Officiel VALUES (DEFAULT, 'Emma',' LOVE' , '3 cuberland', '12 king Edward','Coach'); -- 3
+INSERT INTO Officiel VALUES (DEFAULT, 'Kiahna',' Marr' , '3 Vanier', '12 king Edward','Superviseur'); -- 4
+
 
 ---Athlete
 
 INSERT INTO Athlete VALUES (DEFAULT, 'james','Rodriguez' , '11 blvd', '17 cumberland','5' , 'Canada',1); -- 1
 INSERT INTO Athlete VALUES (DEFAULT, 'Roger','Federer' , '3 private', '21 rockland','12' , 'Swiss',2); -- 2
 INSERT INTO Athlete VALUES (DEFAULT, 'Usain', 'Bolt', '7 henderson', '71 Blake', '21', 'Jamaica',1); -- 3
+INSERT INTO Athlete VALUES (DEFAULT, 'Usain', 'Bolt', '7 henderson', '71 Blake', '21', 'Jamaica',1); -- 4
+INSERT INTO Athlete VALUES (DEFAULT, 'Dubinos', 'Lomla', '7 New-York', '71 Blake', '281', 'CANADA',1); -- 5
+INSERT INTO Athlete VALUES (DEFAULT, 'Kiringa', 'Lluga', '7 Gatineau park', '71 Blake', '55', 'CONGO',1); -- 6
+
+
 
 ---Installation
 
