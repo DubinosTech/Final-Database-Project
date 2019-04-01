@@ -23,6 +23,7 @@
         <?php
             connectDB();
             $sql = "select * from cojoDatabase.Patient order by id;";
+            $sql = "select * from cojodatabase.Patient order by id;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
