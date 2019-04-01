@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "delete from cojoDatabase.Appointment where id = $1;";
+    $sql = "delete from cojoDatabase.ServiceTransport where id = $1;";
 
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();

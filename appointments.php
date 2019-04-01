@@ -6,10 +6,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT  :: Appointments</title>
+    <title>COJO OLYMPIC GAMES PROJECT  :: Service Transport</title>
     <style>
         body {
-            background-image: url(" r/athlete.jpg");
+            background-image: url(" r/transport.jpg");
         } </style>
     <?php include "inc/resources.php" ?>
 </head>
@@ -17,26 +17,20 @@
     <div class="wrapper">
         <header>
             <h1>COJO OLYMPIC GAMES PROJECT</h1>
-            <?php breadcrumb("Appointments") ?>
+            <?php breadcrumb("Service Transport") ?>
         </header>
 
         <a href="newAppointmentView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = <<<EOF
-            select a.id, a.date, a.endDate, p.firstName || ' '  || p.lastName, 
-                d.firstName || ' ' || d.lastName
-            from cojoDatabase.Appointment a
-            join cojoDatabase.Patient p on a.patient = p.id
-            join cojoDatabase.Doctor d on a.doctor = d.id;
-EOF;
+            $sql = "select * from cojoDatabase.ServiceTransport;";
             $ret = pg_query($db, $sql);
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Start", "End", "Remarks", "Patient", "Doctor"]);
+                datatable(["id", "depart", "arrivee", "itineraire", "freqHoraire"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";

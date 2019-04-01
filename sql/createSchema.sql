@@ -53,14 +53,13 @@ CREATE TABLE Patient (
     ssn VARCHAR(255) UNIQUE NOT NULL
 );
 
-CREATE TABLE Appointment (
+CREATE TABLE ServiceTransport (
     id SERIAL PRIMARY KEY,
-    date TIMESTAMP NOT NULL,
-    endDate TIMESTAMP NOT NULL,
-    remarks TEXT,
-    patient INTEGER REFERENCES Patient NOT NULL,
-    doctor INTEGER REFERENCES Doctor NOT NULL,
-    CHECK (date < endDate)
+    depart TIMESTAMP NOT NULL,
+    arrivee TIMESTAMP NOT NULL,
+    itineraire TEXT,
+    freqHoraire INTEGER,
+    CHECK (depart < arrivee)
 );
 
 CREATE TABLE Drug (
