@@ -4,7 +4,7 @@
     connectDB();
     $sql = <<<EOF
         update cojoDatabase.Residence
-        set nomResidence=$1, capaciteResidence=$2, adresseResidence= $3, telephoneResidence=$4,
+        set nomResidence=$1, capaciteResidence=$2, adresseResidence= $3, telephoneResidence=$4
         where id = $5;
 EOF;
 
