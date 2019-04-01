@@ -4,17 +4,15 @@
     connectDB();
 
     $sql = <<<EOF
-        update cojoDatabase.Appointment
-        set date=$1, endDate=$2, remarks=$3, patient=$4, doctor=$5
-        where id = $6;
+        update cojoDatabase.ServiceTransport
+        set depart=$1, arrivee=$2, itineraire=$3, freqHoraire=$4 where id = $5;
 EOF;
 
     $ret = pg_query_params($db, $sql,
-        [$_POST["date"],
-        $_POST["endDate"],
-        $_POST["remarks"],
-        $_POST["patient"],
-        $_POST["doctor"],
+        [$_POST["depart"],
+        $_POST["arrivee"],
+        $_POST["itineraire"],
+        $_POST["freqHoraire"],
         $_POST["id"]]);
     closeDB();
 

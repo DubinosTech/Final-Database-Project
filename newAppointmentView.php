@@ -6,22 +6,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO PROJECT :: New Appointment</title>
+    <title>COJO PROJECT :: nouveau transport</title>
+    <style>
+        body {
+            background-image: url(" r/newTransp.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO PROJECT</h1>
-            <?php breadcrumb("New Appointment") ?>
+            <?php breadcrumb("nouveau transport") ?>
         </header>
 
         <form action="doNewAppointment.php" method="POST">
-            Start: <input type="text" name="date" class="datetimepicker" /><br />
-            End: <input type="text" name="endDate" class="datetimepicker" /><br />
-            Remarks: <textarea name="remarks" cols="90" rows="10"></textarea><br />
-            Patient: <?php patientSelect(); ?><br />
-            Doctor: <?php doctorSelect(); ?><br />
+            Depart: <input type="text" name="depart" class="datetimepicker" /><br />
+            Arrivee: <input type="text" name="arrivee" class="datetimepicker" /><br />
+            Itineraire: <textarea name="itineraire" cols="90" rows="10"></textarea><br />
+            FreqHoraire: <textarea name="frequHoraire" cols="90" rows="10"></textarea><br />
             <input type="submit" value="Submit">
         </form>
 
