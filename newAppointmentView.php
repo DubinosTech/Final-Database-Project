@@ -25,6 +25,7 @@
             Arrivee: <input type="text" name="arrivee" class="datetimepicker" /><br />
             Itineraire: <textarea name="itineraire" cols="90" rows="10"></textarea><br />
             FreqHoraire: <textarea name="frequHoraire" cols="90" rows="10"></textarea><br />
+            FreqHoraire: <textarea name="freqHoraire" cols="90" rows="10"></textarea><br />
             <input type="submit" value="Submit">
         </form>
 
