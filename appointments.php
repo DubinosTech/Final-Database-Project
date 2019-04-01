@@ -24,14 +24,9 @@
 
         <?php
             connectDB();
-            $sql = <<<EOF
-            select a.id, a.date, a.endDate, p.firstName || ' '  || p.lastName, 
-                d.firstName || ' ' || d.lastName
-            from cojoDatabase.Appointment a
-            join cojoDatabase.Patient p on a.patient = p.id
-            join cojoDatabase.Doctor d on a.doctor = d.id;
-EOF;
+            $sql = "select * from cojoDatabase.ServiceTransport;";
             $ret = pg_query($db, $sql);
+            closeDB();
             if(!$ret) {
                 echo pg_last_error($db);
             }
@@ -40,11 +35,7 @@ EOF;
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 3; $i++) {
-                        echo "<td>", $row[$i], "</td>";
-                    }
-                    echo "<td><a href='editAppointmentView.php?id=$row[0]'>Read</a></td>";
-                     for ($i = 3; $i < 5; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
                     if($_SESSION['loggedin'])
@@ -57,7 +48,6 @@ EOF;
 
                 endDatatable();
             }
-            closeDB();
         ?>
     </div>
 </body>

@@ -6,33 +6,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Patients</title>
+    <title>COJO OLYMPIC GAMES PROJECT  :: Residences
+    </title>
+    <style>
+        body {
+            background-image: url(" r/residence.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
-    <div class="wrapper">
-        <header>
-            <h1>COJO OLYMPIC GAMES PROJECT - CSI2532</h1>
-            <?php breadcrumb("Patients") ?>
-        </header>
+    <div class="wrapper ">
 
-        <?php flash(); ?>
+        <header>
+            <h1>COJO OLYMPIC GAMES PROJECT</h1>
+            <?php breadcrumb("Residence") ?>
+        </header>
 
         <a href="newPatientView.php" class="new">New</a>
 
         <?php
             connectDB();
-            $sql = "select * from cojoDatabase.Patient order by id;";
+            $sql = <<<EOF
+            select * from cojodatabase.Residence order by id;
+EOF;
             $ret = pg_query($db, $sql);
+            closeDB();
+
             if(!$ret) {
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "First Name", "Last Name", "Birth Date", "Address", "Telephone", "Sex", "SSN"]);
+                datatable(["id", "nomResidence", "capaciteResidence", "adresseResidence", "telephoneResidence"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
-                    for ($i = 0; $i < 8; $i++) {
+                    for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
                     if($_SESSION['loggedin'])
@@ -45,7 +53,6 @@
 
                 endDatatable();
             }
-            closeDB();
         ?>
     </div>
 </body>
