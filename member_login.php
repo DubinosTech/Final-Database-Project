@@ -65,11 +65,8 @@ include_once "inc/prelude.php";
 			$email = $_POST['email'];
 			$member_password = $_POST['pass'];
 
-			connectDB();
-
 			// Establish the connection
-			$dbconn = pg_connect("host=localhost port=5432 dbname=cojoDatabase user=postgres password=admin") or die('Could not connect: ' . pg_last_error());
-
+            connectDB();
 			$query = "select * from cojoDatabase.Users where email='".$_POST['email']."' and password='".$_POST['pass']."';";
 			$result = pg_query($query) or die('Query failed: ' . pg_last_error());
 
@@ -85,7 +82,7 @@ include_once "inc/prelude.php";
 			}
 
 			pg_free_result($result);
-			pg_close($dbconn);
+			closeDB($db);
 		}
 		?>
 		
