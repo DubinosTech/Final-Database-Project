@@ -71,6 +71,6 @@ INSERT INTO Epreuve VALUES (DEFAULT, '100 m', 'course', 1);
 INSERT INTO Epreuve VALUES (DEFAULT, 'papillon','nage',2);
 
 INSERT INTO Users VALUES ('5000000', 'Mark', 'Sila', 'mark@mail.com', 'password');
-INSERT INTO Users VALUES ('5000001', 'John', 'Doe', 'john@mail.com', 'pass');
-INSERT INTO Users VALUES ('5000002', 'Wayne', 'Rooney', 'rooney@mail.com', 'pass');
-INSERT INTO Users VALUES ('5000003', 'Frank', 'Lampard', 'lampard@mail.com', 'pass');
+INSERT INTO Users VALUES ('5000001', 'Admin', 'Admin', 'admin@mail.com', 'admin');
+INSERT INTO Users VALUES ('5000001', 'Ramzy', 'Kanouche', 'ramzy@mail.com', 'password');
+
