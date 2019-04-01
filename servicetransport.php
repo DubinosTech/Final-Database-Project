@@ -20,7 +20,7 @@
             <?php breadcrumb("Service Transport") ?>
         </header>
 
-        <a href="newAppointmentView.php" class="new">New</a>
+        <a href="newServiceTransportView.php" class="new">New</a>
 
         <?php
             connectDB();
@@ -37,13 +37,13 @@
                     for ($i = 0; $i < 3; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    echo "<td><a href='editAppointmentView.php?id=$row[0]'>Read</a></td>";
+                    echo "<td><a href='editServiceTransporttView.php?id=$row[0]'>Read</a></td>";
                      for ($i = 3; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Appointment", $row[0]);
-                    deleteCell("Appointment", $row[0]);
+                    editCell("ServiceTransport", $row[0]);
+                    deleteCell("ServiceTransport", $row[0]);
 
                     echo "</tr>";
                 }

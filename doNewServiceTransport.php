@@ -15,6 +15,6 @@
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: appointments.php");
+        header("Location: servicetransport.php");
     }
 ?>

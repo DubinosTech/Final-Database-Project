@@ -15,7 +15,6 @@ EOF;
         $_POST["telephoneResidence"],
         $_POST["id"]]);
     closeDB();
-
     if (!$ret) {
         setFlash(pg_last_error($db));
     }

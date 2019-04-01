@@ -3,13 +3,12 @@
 
     connectDB();
 
-    $sql = "select * from cojoDatabase.Appointment where id = $1";
     $sql = "select * from cojoDatabase.ServiceTransport where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
         setFlash("This isn't the serviceTransport you're looking for.");
-        header("Location: appointments.php");
+        header("Location: servicetransport.php");
         exit;
     }
 ?>
@@ -30,19 +29,15 @@
 <body>
     <div class="wrapper">
         <header>
-            <h1>COJO PROJECT</h1>
-
             <h1>COJO</h1>
             <?php breadcrumb("Modifier un transport") ?>
         </header>
 
         <?php  $r = pg_fetch_row($ret); ?>
-        <form action="doEditAppointment.php" method="POST">
+        <form action="doEditServiceTransport.php" method="POST">
             <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
             Depart: <input type="text" class="datetimepicker" name="depart" value="<?php echo $r[1]; ?>" /> <br />
             Arrivee: <input type="text" class="datetimepicker" name="arrivee" value="<?php echo $r[2]; ?>" /> <br />
-            Itineraire: <textarea name="Itineraire"cols="90" rows="10"><?php echo $r[3]; ?></textarea> <br />
-            FrequenceHoraire: <textarea name="FrequenceHoraire"cols="90" rows="10"><?php echo $r[4]; ?></textarea> <br />
             Itineraire: <textarea name="itineraire"cols="90" rows="10"><?php echo $r[3]; ?></textarea> <br />
             FrequenceHoraire: <textarea name="freqHoraire"cols="90" rows="10"><?php echo $r[4]; ?></textarea> <br />
             <input type="submit" value="Submit">

@@ -17,7 +17,7 @@
             <div><a href="doctors.php">Athlètes</a></div>
             <div><a href="secretaries.php">Officiels</a></div>
             <div><a href="patients.php">Résidences</a></div>
-            <div><a href="appointments.php">Services Transport</a></div>
+            <div><a href="servicetransport.php">Services Transport</a></div>
             <div><a href="epreuves.php">Épreuves</a></div>
             <div><a href="employees.php">Employés</a></div>
             <div><a href="ServiceMedical.php">Services Médicaux</a></div>
