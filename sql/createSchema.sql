@@ -24,20 +24,20 @@ CREATE TABLE Athlete(
 );
 
 CREATE TABLE Installation(
-	id SERIAL PRIMARY KEY,
-	iNom CHAR(30) NOT NULL,
-	adresse CHAR(30) NOT NULL,
-	usage CHAR(30) NOT NULL,
-	description CHAR(50) NOT NULL,
-	capacite CHAR(30) NOT NULL);
-	
+    id SERIAL PRIMARY KEY,
+    iNom CHAR(30) NOT NULL,
+    adresse CHAR(30) NOT NULL,
+    usage CHAR(30) NOT NULL,
+    description CHAR(50) NOT NULL,
+    capacite CHAR(30) NOT NULL);
+    
 CREATE TABLE ServiceMedical(
-		id SERIAL PRIMARY KEY,
-		snom CHAR(30) NOT NULL,
+        id SERIAL PRIMARY KEY,
+        snom CHAR(30) NOT NULL,
         sdescription CHAR(50) ,
         sadresse CHAR(30),
         stelephone CHAR(30));
-	
+    
    
 CREATE TABLE Employee(
              eId SERIAL PRIMARY KEY,
@@ -48,7 +48,7 @@ CREATE TABLE Employee(
              telephone CHAR(30));
              
 CREATE TABLE Epreuve(
-			 id SERIAL PRIMARY KEY,
+             id SERIAL PRIMARY KEY,
              nomEpreuve CHAR(30),
              nomDiscipline CHAR(30),
              installation INTEGER REFERENCES Installation ON DELETE SET NULL);

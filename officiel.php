@@ -1,5 +1,5 @@
 <?php
-include_once "inc/prelude.php";
+    include_once "inc/prelude.php";
 ?>
 
 <!DOCTYPE html>
@@ -86,6 +86,7 @@ EOF;
                 
                 endDatatable();
             }
+            closeDB();
         ?>
     </div>
 </body>

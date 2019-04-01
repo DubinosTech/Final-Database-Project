@@ -22,7 +22,7 @@
             <?php breadcrumb("Athletes") ?>
         </header>
 
-        <a href="newDoctorView.php" class="new">New</a>
+        <a href="newAthleteView.php" class="new">New</a>
 
         <?php
             connectDB();
@@ -39,16 +39,18 @@ EOF;
                 echo pg_last_error($db);
             }
             else {
-                datatable(["ID", "Prenom", "Nom", "Address Permanante", "Adresse Village", "Medaille", "Pays", "Superviseur"]);
+                datatable(["ID", "Prenom", "Nom", "Address Permanante", "Adresse Village", "Pays", "Medaille", "Superviseur"]);
 
                 while ($row = pg_fetch_row($ret)) {
                     echo "<tr>";
                     for ($i = 0; $i < 8; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-
-                    editCell("Doctor", $row[0]);
-                    deleteCell("Doctor", $row[0]);
+                    if($_SESSION['loggedin'])
+                    {
+                        editCell("Athlete", $row[0]);
+                        deleteCell("Athlete", $row[0]);
+                    }
 
                     echo "</tr>";
                 }

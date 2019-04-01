@@ -10,7 +10,7 @@ $db = null;
 
 function connectDB() {
     global $db;
-    $db = pg_connect("host=localhost port=5432 dbname=cojoDatabase user=postgres password=admin");
+    $db = pg_connect("host=localhost port=5433 dbname=cojoDatabase user=postgres password=master10");
     if (!$db) {
         echo "Error : Unable to open database\n";
     }

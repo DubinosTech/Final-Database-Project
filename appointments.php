@@ -26,6 +26,7 @@
             connectDB();
             $sql = "select * from cojoDatabase.ServiceTransport;";
             $ret = pg_query($db, $sql);
+            closeDB();
             if(!$ret) {
                 echo pg_last_error($db);
             }
@@ -37,9 +38,11 @@
                     for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
+                    if($_SESSION['loggedin'])
+                    {
                     editCell("Appointment", $row[0]);
                     deleteCell("Appointment", $row[0]);
-
+                    }
                     echo "</tr>";
                 }
 

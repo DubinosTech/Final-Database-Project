@@ -15,6 +15,6 @@ EOF;
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: doctors.php");
+        header("Location: athlete.php");
     }
 ?>
