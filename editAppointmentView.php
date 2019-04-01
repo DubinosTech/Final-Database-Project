@@ -5,7 +5,6 @@
 
     $sql = "select * from cojoDatabase.Appointment where id = $1";
     $sql = "select * from cojoDatabase.ServiceTransport where id = $1";
-
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
@@ -35,7 +34,6 @@
 
             <h1>COJO</h1>
             <?php breadcrumb("Modifier un transport") ?>
-
         </header>
 
         <?php  $r = pg_fetch_row($ret); ?>
