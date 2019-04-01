@@ -6,7 +6,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Patients</title>
     <title>COJO OLYMPIC GAMES PROJECT - CSI2532 :: Residences</title>
     <style>
         body {
