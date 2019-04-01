@@ -43,6 +43,8 @@
             Arrivee: <input type="text" class="datetimepicker" name="arrivee" value="<?php echo $r[2]; ?>" /> <br />
             Itineraire: <textarea name="Itineraire"cols="90" rows="10"><?php echo $r[3]; ?></textarea> <br />
             FrequenceHoraire: <textarea name="FrequenceHoraire"cols="90" rows="10"><?php echo $r[4]; ?></textarea> <br />
+            Itineraire: <textarea name="itineraire"cols="90" rows="10"><?php echo $r[3]; ?></textarea> <br />
+            FrequenceHoraire: <textarea name="freqHoraire"cols="90" rows="10"><?php echo $r[4]; ?></textarea> <br />
             <input type="submit" value="Submit">
         </form>
     </div>
