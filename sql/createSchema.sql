@@ -41,27 +41,6 @@ CREATE TABLE Athlete(
     officiel INTEGER REFERENCES Officiel ON DELETE SET NULL
 );
 
-CREATE TABLE Patient (
-    id SERIAL PRIMARY KEY,
-    firstName VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL,
-    birthDate DATE NOT NULL,
-    address VARCHAR(255) NOT NULL,
-    tel VARCHAR(255) NOT NULL,
-    sex CHAR(1) NOT NULL,
-    CONSTRAINT checkSex CHECK (sex = 'M' OR sex = 'F'),
-    ssn VARCHAR(255) UNIQUE NOT NULL
-);
-
-CREATE TABLE ServiceTransport (
-    id SERIAL PRIMARY KEY,
-    depart TIMESTAMP NOT NULL,
-    arrivee TIMESTAMP NOT NULL,
-    itineraire TEXT,
-    freqHoraire INTEGER,
-    CHECK (depart < arrivee)
-);
-
 CREATE TABLE Drug (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255) NOT NULL,
@@ -74,7 +53,7 @@ CREATE TABLE DrugScript (
     id SERIAL PRIMARY KEY,
     drug INTEGER REFERENCES Drug NOT NULL,
     doctor INTEGER REFERENCES Doctor NOT NULL, -- replace with appointment
-    patient INTEGER REFERENCES Patient NOT NULL,
+    --patient INTEGER REFERENCES Patient NOT NULL,
     date DATE NOT NULL,
     validDays INTEGER
 );
@@ -83,7 +62,7 @@ CREATE TABLE ProcScript (
     id SERIAL PRIMARY KEY,
     procName VARCHAR(255) NOT NULL,
     doctor INTEGER REFERENCES Doctor NOT NULL,
-    patient INTEGER REFERENCES Patient NOT NULL,
+    --patient INTEGER REFERENCES Patient NOT NULL,
     date DATE NOT NULL
 );
 
@@ -106,7 +85,7 @@ CREATE TABLE DrugPathologyConflict (
 
 CREATE TABLE PatientPathology (
     id SERIAL PRIMARY KEY,
-    patient INTEGER REFERENCES Patient NOT NULL,
+    --patient INTEGER REFERENCES Patient NOT NULL,
     pathology INTEGER REFERENCES Pathology NOT NULL
 );
 
@@ -140,3 +119,20 @@ CREATE TABLE Epreuve(
              nomEpreuve CHAR(30),
              nomDiscipline CHAR(30),
              installation INTEGER REFERENCES Installation ON DELETE SET NULL);
+
+CREATE TABLE Residence (
+            id SERIAL PRIMARY KEY,
+            nomResidence VARCHAR(255) NOT NULL,
+            capaciteResidence VARCHAR(255) NOT NULL,
+            adresseResidence VARCHAR(255) NOT NULL,
+            telephoneResidence VARCHAR(255) NOT NULL
+);
+
+CREATE TABLE ServiceTransport (
+            id SERIAL PRIMARY KEY,
+            depart TIMESTAMP NOT NULL,
+            arrivee TIMESTAMP NOT NULL,
+            itineraire TEXT,
+            freqHoraire INTEGER,
+            CHECK (depart < arrivee)
+);
