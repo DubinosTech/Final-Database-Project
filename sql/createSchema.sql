@@ -69,3 +69,11 @@ CREATE TABLE ServiceTransport (
             freqHoraire VARCHAR(255) NOT NULL,
             CHECK (depart < arrivee)
 );
+
+CREATE TABLE Users(
+    memberNumber char(7) PRIMARY KEY,
+    lastname varchar(20),
+    firstname varchar(20),
+    email varchar(30),
+    password varchar(30)
+);

@@ -48,3 +48,9 @@ INSERT INTO ServiceTransport VALUES (DEFAULT, '3000-01-01 17:30', '3000-01-01 19
 INSERT INTO ServiceTransport VALUES (DEFAULT, '3000-01-01 19:00', '3000-01-01 21:30', 'Minto - Monpetit', '20 min');
 INSERT INTO ServiceTransport VALUES (DEFAULT, '3000-01-01 17:30', '3000-01-01 19:00', 'Lees-Minto', '20 min');
 INSERT INTO ServiceTransport VALUES (DEFAULT, '3000-01-01 18:00', '3000-01-01 20:00', 'Minto - Residence', '30 min');
+
+---Users
+
+INSERT INTO Users VALUES ('5000000', 'Mark', 'Sila', 'mark@mail.com', 'password');
+INSERT INTO Users VALUES ('5000001', 'Admin', 'Admin', 'admin@mail.com', 'admin');
+INSERT INTO Users VALUES ('5000001', 'Ramzy', 'Kanouche', 'ramzy@mail.com', 'password');
