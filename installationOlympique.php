@@ -42,7 +42,7 @@ EOF;
                     for ($i = 0; $i < 6; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    if($_SESSION['loggedin'])
+                    if(isset ($_SESSION['loggedin']) && $_SESSION['loggedin'])
                     {
                     editCell("InstallationOlympique", $row[0]);
                     deleteCell("InstallationOlympique", $row[0]);

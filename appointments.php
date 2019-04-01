@@ -38,7 +38,7 @@
                     for ($i = 0; $i < 5; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    if($_SESSION['loggedin'])
+                    if(isset ($_SESSION['loggedin']) && $_SESSION['loggedin'])
                     {
                     editCell("Appointment", $row[0]);
                     deleteCell("Appointment", $row[0]);

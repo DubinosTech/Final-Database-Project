@@ -45,7 +45,7 @@ EOF;
                     for ($i = 0; $i < 7; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    if($_SESSION['loggedin'])
+                    if(isset ($_SESSION['loggedin']) && $_SESSION['loggedin'])
                     {
                     editCell("Officiel", $row[0]);
                     deleteCell("Officiel", $row[0]);
@@ -76,7 +76,7 @@ EOF;
                     for ($i = 0; $i < 6; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    if($_SESSION['loggedin'])
+                    if(isset ($_SESSION['loggedin']) && $_SESSION['loggedin'])
                     {
                     editCell("Officiel", $row[0]);
                     deleteCell("Officiel", $row[0]);

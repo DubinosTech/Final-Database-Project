@@ -1,4 +1,5 @@
 <?php
+
     include_once "inc/prelude.php";
 ?>
 
@@ -46,7 +47,7 @@ EOF;
                     for ($i = 0; $i < 8; $i++) {
                         echo "<td>", $row[$i], "</td>";
                     }
-                    if($_SESSION['loggedin'])
+                    if(isset ($_SESSION['loggedin']) && $_SESSION['loggedin'])
                     {
                         editCell("Athlete", $row[0]);
                         deleteCell("Athlete", $row[0]);
