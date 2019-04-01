@@ -20,7 +20,7 @@
             <?php breadcrumb("Officiels") ?>
         </header>
         
-        <a href="newSecretaryView.php" class="new">New</a>
+        <a href="newOfficielView.php" class="new">New</a>
         
         <h2>--------Superviseur des Athletes------</h2>
         <?php
@@ -46,8 +46,8 @@ EOF;
                         echo "<td>", $row[$i], "</td>";
                     }
 
-                    editCell("Secretary", $row[0]);
-                    deleteCell("Secretary", $row[0]);
+                    editCell("Officiel", $row[0]);
+                    deleteCell("Officiel", $row[0]);
 
                     echo "</tr>";
                 }
@@ -76,8 +76,8 @@ EOF;
                         echo "<td>", $row[$i], "</td>";
                     }
                     
-                    editCell("Secretary", $row[0]);
-                    deleteCell("Secretary", $row[0]);
+                    editCell("Officiel", $row[0]);
+                    deleteCell("Officiel", $row[0]);
                     
                     echo "</tr>";
                 }

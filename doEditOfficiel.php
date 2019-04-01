@@ -16,6 +16,6 @@ EOF;
         setFlash(pg_last_error($db));
     }
     else {
-        header("Location: secretaries.php");
+        header("Location: officiel.php");
     }
 ?>
