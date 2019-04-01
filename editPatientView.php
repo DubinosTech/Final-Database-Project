@@ -3,11 +3,11 @@
 
     connectDB();
 
-    $sql = "select * from cojoDatabase.Patient where id = $1";
+    $sql = "select * from cojoDatabase.Residence where id = $1";
     $ret = pg_query_params($db, $sql, [$_GET["id"]]);
     closeDB();
     if (!$ret) {
-        setFlash("This isn't the patient you're looking for.");
+        setFlash("This isn't the Residence you're looking for.");
         header("Location: patients.php");
         exit;
     }
@@ -17,14 +17,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO PROJECT :: Edit Patient</title>
+    <title>COJO PROJECT :: modifier Residence</title>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO PROJECT</h1>
-            <?php breadcrumb("Edit Patient") ?>
+            <?php breadcrumb("modifier Residence") ?>
         </header>
 
         <?php
@@ -32,13 +32,10 @@
 
             ?><form action="doEditPatient.php" method="POST">
                 <input type="hidden" name="id" value="<?php echo $r[0] ?>"><br />
-                First name: <input type="text" name="firstName" value="<?php echo $r[1] ?>"><br />
-                Last name: <input type="text" name="lastName" value="<?php echo $r[2] ?>"><br />
-                Birth date: <input type="text" class="datepicker" name="birthDate" value="<?php echo $r[3] ?>"><br />
-                Address: <input type="text" name="address" value="<?php echo $r[4] ?>"><br />
-                Tel: <input type="text" name="tel" value="<?php echo $r[5] ?>"><br />
-                Sex: <?php sexSelect($r[6]) ?><br />
-                SSN: <input type="text" name="ssn" value="<?php echo $r[7] ?>"><br />
+                Nom Residence: <input type="text" name="nomResidence" value="<?php echo $r[1] ?>"><br />
+                Capacite Residence: <input type="text" name="capaciteResidence" value="<?php echo $r[2] ?>"><br />
+                AdresseResidence: <input type="text" name="adresseResidence" value="<?php echo $r[3] ?>"><br />
+                Telephone Residence: <input type="text" name="telephoneResidence" value="<?php echo $r[4] ?>"><br />
                 <input type="submit" value="Submit">
             </form> <?php
         ?>

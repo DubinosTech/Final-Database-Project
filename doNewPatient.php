@@ -3,14 +3,12 @@
 
     connectDB();
 
-    $sql = "insert into cojoDatabase.Patient (firstName, lastName, birthDate, address, tel, sex, ssn) values ($1, $2, $3, $4, $5, $6, $7)";
-    $ret = pg_query_params($db, $sql, [$_POST["firstName"],
-        $_POST["lastName"],
-        $_POST["birthDate"],
-        $_POST["address"],
-        $_POST["tel"],
-        $_POST["sex"],
-        $_POST["ssn"]]);
+    $sql = "insert into cojoDatabase.Residence (nomResidence, capaciteResidence, adresseResidence, telephoneResidence) values ($1, $2, $3, $4)";
+    $ret = pg_query_params($db, $sql, [
+        $_POST["nomResidence"],
+        $_POST["capaciteResidence"],
+        $_POST["adresseResidence"],
+        $_POST["telephoneResidence"]]);
     closeDB();
 
     if (!$ret) {

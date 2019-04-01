@@ -6,24 +6,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>COJO PROJECT :: New Patient</title>
+    <title>COJO PROJECT :: Nouvelle residence</title>
+    <style>
+        body {
+            background-image: url(" r/residence.jpg");
+        } </style>
     <?php include "inc/resources.php" ?>
 </head>
 <body>
     <div class="wrapper">
         <header>
             <h1>COJO PROJECT</h1>
-            <?php breadcrumb("New Patient") ?>
+            <?php breadcrumb("Nouvelle residence") ?>
         </header>
 
         <form action="doNewPatient.php" method="POST">
-            First name: <input type="text" name="firstName"><br />
-            Last name: <input type="text" name="lastName"><br />
-            Birth date: <input type="text" class="datepicker" name="birthDate"><br />
-            Address: <input type="text" name="address"><br />
-            Tel: <input type="text" name="tel"><br />
-            Sex: <?php sexSelect(); ?><br />
-            SSN: <input type="text" name="ssn"><br />
+            Nom residence: <input type="text" name="nomResidence"><br />
+            Capacite residence: <input type="text" name="capaciteResidence"><br />
+            Adresse Residence: <input type="text" name="adresseResidence"><br />
+            Telephone residence: <input type="text" name="telephoneResidence"><br />
             <input type="submit" value="Submit">
         </form>
 
