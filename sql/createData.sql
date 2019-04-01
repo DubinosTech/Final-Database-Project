@@ -7,6 +7,7 @@ INSERT INTO Officiel VALUES (DEFAULT, 'Joseph','Morinho' , '7 Daly ave', '22 Lau
 INSERT INTO Officiel VALUES (DEFAULT, 'Diego','Simeoni' , '3 summerset', '12 king Edward','Entraineur'); -- 2
 
 INSERT INTO Doctor VALUES (DEFAULT, 'Han', 'Solo', 'Cockpit, Millenium Falcon', 'Han shot first', 'Womanizing', 1); -- 1
+INSERT INTO Doctor VALUES (DEFAULT, 'Han', 'Solo', 'Cockpit, Millenium Falcon', 'Han shot first', 'Womanizing', 2); -- 1
 INSERT INTO Doctor VALUES (DEFAULT, 'Chewbacca', 'Wookie', 'Passenger seat, Millenium Falcon', 'Rrrrrrr-ghghghghgh!', 'Veterinary Medicine', 1); -- 2
 INSERT INTO Doctor VALUES (DEFAULT, 'Darth', 'Vader', 'Room 616, 31st Floor, Death Star', '616-616-6666', 'Transhumanism', 1); -- 3
 
