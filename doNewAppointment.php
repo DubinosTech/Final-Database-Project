@@ -3,7 +3,7 @@
 
     connectDB();
 
-    $sql = "insert into cojoDatabase.ServiceTransport (depart, arrivee, itineraire, freqHoraire) values ($1, $2, $3, $4, $5)";
+    $sql = "insert into cojoDatabase.ServiceTransport(depart, arrivee, itineraire, freqHoraire) values ($1, $2, $3, $4);";
     $ret = pg_query_params($db, $sql,
         [$_POST["depart"],
         $_POST["arrivee"],

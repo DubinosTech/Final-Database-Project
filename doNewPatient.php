@@ -3,8 +3,8 @@
 
     connectDB();
 
-    $sql = "insert into cojoDatabase.Residence (nomResidence, capaciteResidence, adresseResidence, telephoneResidence) values ($1, $2, $3, $4, $5)";
-    $ret = pg_query_params($db, $sql, [$_POST["firstName"],
+    $sql = "insert into cojoDatabase.Residence (nomResidence, capaciteResidence, adresseResidence, telephoneResidence) values ($1, $2, $3, $4)";
+    $ret = pg_query_params($db, $sql, [
         $_POST["nomResidence"],
         $_POST["capaciteResidence"],
         $_POST["adresseResidence"],
